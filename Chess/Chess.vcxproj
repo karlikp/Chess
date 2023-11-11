@@ -128,23 +128,25 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BishopPiece.cpp" />
-    <ClCompile Include="Functions.cpp" />
+    <ClCompile Include="functions.cpp" />
     <ClCompile Include="GueenPiece.cpp" />
     <ClCompile Include="KingPiece.cpp" />
     <ClCompile Include="KnightPiece.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="PawnPiece.cpp" />
     <ClCompile Include="Piece.cpp" />
+    <ClCompile Include="player.cpp" />
     <ClCompile Include="RookPiece.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BishopPiece.h" />
-    <ClInclude Include="Functions.h" />
+    <ClInclude Include="functions.h" />
     <ClInclude Include="GueenPiece.h" />
     <ClInclude Include="KingPiece.h" />
     <ClInclude Include="KnightPiece.h" />
     <ClInclude Include="PawnPiece.h" />
     <ClInclude Include="Piece.h" />
+    <ClInclude Include="player.h" />
     <ClInclude Include="RookPiece.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

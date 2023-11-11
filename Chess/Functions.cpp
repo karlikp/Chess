@@ -22,9 +22,10 @@ vector<string>read_string_from_file(string file_name)
 	return array;
 }
 
-void single_move()
+void single_move(player name)
 {
 
+	if (player::name.check)
 }
 
 
