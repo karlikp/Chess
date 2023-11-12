@@ -1,16 +1,19 @@
-#include "functions.h"
-
 #pragma once
 
+#include <iostream>
+#include <vector>
 
+using namespace std;
 
-class player
+class Player
 {
-	vector<int> scope;
+	vector <int> scope;
 	bool check = false;
 
 public:
 
-	player(string kolor);
+	Player(string kolor);
+
+	bool return_check();
 };
 
