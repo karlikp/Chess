@@ -11,7 +11,7 @@ using namespace std;
 
 
 // First letters then numbers
-vector<string>read_string_from_file(string file_name)
+vector<string>read_strings_from_file(string file_name)
 {
 	vector<string> array;
 	ifstream file;
@@ -104,6 +104,21 @@ pair<string, string> move_decision()
 	return move;
 }
 
+void cout_string_vector(vector <string> array)
+{
+	for (int i = 0; i < array.size(); i++)
+		cout << array[i] << "\n";
+	cout << '\n';
+}
+
+void current_piece(pair<char, int> coordinates)
+{
+	int vector_index = 10 - coordinates.first;
+	int string_index = 4 + (coordinates.second - 65) * 3;
+	int sign_string_index = string_index - 1;
+
+
+}
 
 
 

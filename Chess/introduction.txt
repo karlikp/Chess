@@ -1,0 +1,5 @@
+You are welcome in chess program.
+This program let you play in chess and it'll care agreement with the chess rules.
+
+First player'll caled "white player", the player head white piece.
+Similary, second player'll caled "black player", the player head black piece.

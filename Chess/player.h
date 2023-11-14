@@ -13,7 +13,7 @@ class Player
 public:
 
 	Player(string kolor);
-
+	bool check_scope(int piece_number);
 	bool return_check();
 };
 

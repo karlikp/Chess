@@ -3,22 +3,25 @@
 #include <string>
 
 #include "functions.h"
+#include "Background.h"
+
 using namespace std;
 
 int main()
 {
-	vector<string> board;
-	board = read_string_from_file("Chess_board.txt");
+	/*vector <string> board = read_strings_from_file("Chess_board.txt");
 
-	for (int i = 0; i < board.size(); i++)
-		cout << board[i] << "\n";
-	cout << '\n';
+	cout_string_vector(board);
 
-	
-	vector<string> rules;
-	rules = read_string_from_file("rules.txt");
+	vector<string> rules = read_strings_from_file("rules.txt");
 
-	for (int i = 0; i < rules.size(); i++)
-		cout << rules[i] << "\n";
-	cout << '\n';
+	cout_string_vector(rules);*/
+
+	Background chess_ground;
+
+	chess_ground.access_to_coordinates(read_start_position());
+	Player white("white piece");
+	Player black("black piece");
+
 }
+	
