@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="Background.cpp" />
     <ClCompile Include="BishopPiece.cpp" />
+    <ClCompile Include="Black.cpp" />
     <ClCompile Include="functions.cpp" />
     <ClCompile Include="GueenPiece.cpp" />
     <ClCompile Include="KingPiece.cpp" />
@@ -136,20 +137,23 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="PawnPiece.cpp" />
     <ClCompile Include="Piece.cpp" />
-    <ClCompile Include="player.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="RookPiece.cpp" />
+    <ClCompile Include="White.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Background.h" />
     <ClInclude Include="BishopPiece.h" />
+    <ClInclude Include="Black.h" />
     <ClInclude Include="functions.h" />
-    <ClInclude Include="GueenPiece.h" />
+    <ClInclude Include="QueenPiece.h" />
     <ClInclude Include="KingPiece.h" />
     <ClInclude Include="KnightPiece.h" />
     <ClInclude Include="PawnPiece.h" />
     <ClInclude Include="Piece.h" />
-    <ClInclude Include="player.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="RookPiece.h" />
+    <ClInclude Include="White.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

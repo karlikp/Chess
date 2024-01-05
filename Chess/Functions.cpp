@@ -11,7 +11,7 @@ using namespace std;
 
 
 // First letters then numbers
-vector<string>read_strings_from_file(string file_name)
+vector<string>readStringsFromFile(string file_name)
 {
 	vector<string> array;
 	ifstream file;
@@ -32,29 +32,16 @@ vector<string>read_strings_from_file(string file_name)
 	return array;
 }
 
-void single_move(Player name)
-{
 
-	if (name.return_check() == false)
-	{
-		//move_decision();
-	}
-}
-
-pair<char, int> read_start_position()
+pair<char, int> setPosition()
 {
 	bool correct;
-	char upper_letter{};
+	char upperLetter{};
 	int number;
 	do
 	{
 		char letter;
 		string coordinates;
-		correct = true;
-
-		cout << "\nType in coordinate of your piece, which you're going to do a move"
-			<< " (for example: D2) ";
-
 
 		getline(cin, coordinates);
 		letter = coordinates[0];
@@ -62,32 +49,18 @@ pair<char, int> read_start_position()
 
 		coordinates.clear();
 
-		upper_letter = toupper(letter);
-		if (not (upper_letter <= int('H') and upper_letter >= int('A')))
-		{
-			cout << "\nYour first sign is wrong";
-			correct = false;
-		}
-		if (not (number <= 8 and number >= 1))
-		{
-			cout << "\nYour second sign is wrong";
-			correct = false;
-		}
-		if (not correct)
-			cout << "\nCorrect your answer, please.";
+		upperLetter = toupper(letter);
+
+		correct = boardValidation(upperLetter, number);
+		
 	} while (not correct);
 
-	pair<char, int> checked_coordinates(upper_letter, number);
-	return checked_coordinates;
+	pair<char, int> checkedCoordinates(upperLetter, number);
+	return checkedCoordinates;
 
 }
 
-//pair<char, int> piece_destination()
-//{
-//
-//}
-
-pair<string, string> move_decision()
+pair<string, string> moveDecision()
 {
 	string start, destination;
 
@@ -104,22 +77,44 @@ pair<string, string> move_decision()
 	return move;
 }
 
-void cout_string_vector(vector <string> array)
+void coutStringVector(vector <string> array)
 {
 	for (int i = 0; i < array.size(); i++)
 		cout << array[i] << "\n";
 	cout << '\n';
 }
 
-void current_piece(pair<char, int> coordinates)
+bool boardValidation(char letter, int number)
 {
-	int vector_index = 10 - coordinates.first;
-	int string_index = 4 + (coordinates.second - 65) * 3;
-	int sign_string_index = string_index - 1;
+	bool correct = true;
 
+	if (not (letter <= int('H') and letter >= int('A')))
+	{
+		cout << "\nYour first sign is wrong";
+		correct = false;
+	}
+	if (not (number <= 8 and number >= 1))
+	{
+		cout << "\nYour second sign is wrong";
+		correct = false;
+	}
+	if (not correct)
+		cout << "\nCorrect your answer, please.";
 
+	return correct;
 }
 
+pair<char, int> setStartPosition()
+{
+	cout << "\nType in coordinate of your piece, which you're going to do a move"
+		<< " (for example: D2) ";
 
+	return setPosition();
+}
 
-
+pair<char, int> setFinishPosition()
+{
+	cout << "\nType in coordinate where you're going to do a move";
+		
+	return setPosition();
+}

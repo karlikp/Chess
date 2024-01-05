@@ -4,24 +4,35 @@
 
 #include "functions.h"
 #include "Background.h"
+#include "Piece.h"
 
 using namespace std;
 
 int main()
 {
-	/*vector <string> board = read_strings_from_file("Chess_board.txt");
 
-	cout_string_vector(board);
+	Background chessGround;
 
-	vector<string> rules = read_strings_from_file("rules.txt");
 
-	cout_string_vector(rules);*/
+	bool finish = false;
+	do
+	{
 
-	Background chess_ground;
+		Player* person = chessGround.getPlayer();
+	
+		chessGround.checkPiece(setStartPosition());
 
-	chess_ground.access_to_coordinates(read_start_position());
-	Player white("white piece");
-	Player black("black piece");
+		Piece* currentPiece = chessGround.getPiece(chessGround.getBoardContent().second);
 
+		chessGround.checkPiece(setFinishPosition());
+
+
+	if (finish)
+		person -> finish();
+
+
+	delete person;
+	delete currentPiece;
+	} while (!finish);
 }
 	

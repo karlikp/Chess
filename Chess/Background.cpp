@@ -7,32 +7,83 @@
 
 Background::Background()
 {
-	vector <string> intro = read_strings_from_file("introduction.txt");
-	cout_string_vector(intro);
-	board = read_strings_from_file("Chess_board.txt");
-	cout_string_vector(board);
-	rules = read_strings_from_file("rules.txt");
-	cout_string_vector(rules);
+	vector <string> intro = readStringsFromFile("introduction.txt");
+	coutStringVector(intro);
+	board = readStringsFromFile("chessBoard.txt");
+	coutStringVector(board);
+	rules = readStringsFromFile("rules.txt");
+	coutStringVector(rules);
 }
 
-void Background::show_board()
+void Background::showBoard()
 {
-	cout_string_vector(board);
+	coutStringVector(board);
 }
 
-void Background::show_rules()
+void Background::showRules()
 {
-	cout_string_vector(rules);
+	coutStringVector(rules);
 }
 
-bool Background::access_to_coordinates(pair<char, int> coordinates)
+void Background::checkPiece(pair<char, int> coordinates)
 {
-	int vector_index = 10 - coordinates.second;
-	int string_index = 4 + (coordinates.first - 65) * 3;
-	int sign_string_index = string_index - 1;
+	int vectorIndex = 10 - coordinates.second;
+	int stringIndex = 4 + (coordinates.first - 65) * 3;
+	int signStringIndex = stringIndex - 1;
 
-	cout << board[vector_index][string_index];
+	pieceSign = board[vectorIndex][signStringIndex];
+	pieceValue = board[vectorIndex][stringIndex] - 48;
 
-	return false;
+}
+
+pair<char,int> Background::getBoardContent()
+{
+	pair<char, int> piece;
+	piece.first = pieceSign;
+	piece.second = pieceValue;
+	return piece;
+}
+
+Player* Background::getPlayer()
+{
+	Player* person = nullptr;
+	if (turnCounter == 0)
+	{
+		person = new White;
+		turnCounter++;
+	}
+	else
+	{
+		person = new Black;
+		turnCounter--;
+	}
+	return person;
+}
+
+Piece* Background::getPiece(int value)
+{
+	Piece* currentPiece = nullptr;
+	switch (value)
+	{
+	case 1:
+		currentPiece = new PawnPiece;
+		break;
+	case 2:
+		currentPiece = new KnightPiece;
+		break;
+	case 3:
+		currentPiece = new BishopPiece;
+		break;
+	case 4:
+		currentPiece = new RookPiece;
+		break;
+	case 5:
+		currentPiece = new QueenPiece;
+		break;
+	case 6:
+		currentPiece = new KingPiece;
+		break;
+	}
+	return currentPiece;
 }
 

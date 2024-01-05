@@ -1,5 +1,7 @@
+#include "Piece.h"
+
 #pragma once
-class KingPiece
+class KingPiece: public Piece
 {
 	bool Check = false;
 

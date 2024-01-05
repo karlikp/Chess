@@ -1,5 +1,7 @@
+#include "Piece.h"
+
 #pragma once
-class PawnPiece
+class PawnPiece: public Piece
 {
 };
 

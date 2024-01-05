@@ -13,17 +13,21 @@ using namespace std;
 - rules,
 - help.*/
 
-vector<string>read_strings_from_file(string file_name); 
+vector<string>readStringsFromFile(string file_name); 
 
-void cout_string_vector(vector <string> array);
+void coutStringVector(vector <string> array);
 
-void single_move(Player);
+void singleMove(Player);
 
-pair<string,string> move_decision();
+pair<string,string> moveDecision();
 
-pair<char, int> read_start_position();
+pair<char, int> setPosition();
 
-void current_piece(pair<char, int> coordinates);
+pair<char, int> setStartPosition();
+
+pair<char, int> setFinishPosition();
+
+bool boardValidation(char letter, int number);
 
 
 

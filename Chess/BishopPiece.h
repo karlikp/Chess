@@ -1,5 +1,7 @@
+#include "Piece.h"
+
 #pragma once
-class BishopPiece
+class BishopPiece: public Piece
 {
 };
 
