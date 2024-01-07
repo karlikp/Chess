@@ -19,12 +19,20 @@ int main()
 	{
 
 		Player* person = chessGround.getPlayer();
-	
-		chessGround.checkPiece(setStartPosition());
+
+		pair<char, int> startPosition = getStartPosition();
+
+		chessGround.setPiece(startPosition);
 
 		Piece* currentPiece = chessGround.getPiece(chessGround.getBoardContent().second);
 
-		chessGround.checkPiece(setFinishPosition());
+		currentPiece->getScope(startPosition);
+
+		getFinishPosition();
+
+		
+
+		currentPiece->checkMovePossibility(chessGround.getBoardContent()); 
 
 
 	if (finish)

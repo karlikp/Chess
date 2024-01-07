@@ -5,6 +5,14 @@
 #include "Background.h"
 #include "functions.h"
 
+char Background::tempSign = {};
+vector <string> Background::board = {};
+
+vector<string> Background::getBoard()
+{
+	return board;
+}
+
 Background::Background()
 {
 	vector <string> intro = readStringsFromFile("introduction.txt");
@@ -25,22 +33,22 @@ void Background::showRules()
 	coutStringVector(rules);
 }
 
-void Background::checkPiece(pair<char, int> coordinates)
+void Background::setPiece(pair<char, int> coordinates)
 {
-	int vectorIndex = 10 - coordinates.second;
-	int stringIndex = 4 + (coordinates.first - 65) * 3;
-	int signStringIndex = stringIndex - 1;
+	int rowIndex = 10 - coordinates.second;
+	int columnIndex = 4 + (coordinates.first - int('A')) * 3;
+	int signColumnIndex = columnIndex - 1;
 
-	pieceSign = board[vectorIndex][signStringIndex];
-	pieceValue = board[vectorIndex][stringIndex] - 48;
+	tempSign = board[rowIndex][signColumnIndex];
+	startPieceValue = board[rowIndex][columnIndex] - int('0');
 
 }
 
 pair<char,int> Background::getBoardContent()
 {
-	pair<char, int> piece;
-	piece.first = pieceSign;
-	piece.second = pieceValue;
+	pair<char, int> piece(tempSign, startPieceValue);
+	//piece.first = pieceSign;
+	//piece.second = pieceValue;
 	return piece;
 }
 
@@ -66,24 +74,26 @@ Piece* Background::getPiece(int value)
 	switch (value)
 	{
 	case 1:
-		currentPiece = new PawnPiece;
+		currentPiece = new PawnPiece(board);
 		break;
 	case 2:
-		currentPiece = new KnightPiece;
+		currentPiece = new KnightPiece(board);
 		break;
 	case 3:
-		currentPiece = new BishopPiece;
+		currentPiece = new BishopPiece(board);
 		break;
 	case 4:
-		currentPiece = new RookPiece;
+		currentPiece = new RookPiece(board);
 		break;
 	case 5:
-		currentPiece = new QueenPiece;
+		currentPiece = new QueenPiece(board);
 		break;
 	case 6:
-		currentPiece = new KingPiece;
+		currentPiece = new KingPiece(board);
 		break;
 	}
 	return currentPiece;
 }
+
+
 

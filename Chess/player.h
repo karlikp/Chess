@@ -18,7 +18,7 @@ public:
 	//virtual bool check_scope(int piece_number);
 
 	virtual bool returnCheck();
-	virtual bool validation(pair<char,int> current_piece) = 0;
+	//virtual bool validation(pair<char,int> current_piece) = 0;
 	virtual void finish() = 0;
 
 };

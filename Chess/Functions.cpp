@@ -33,7 +33,7 @@ vector<string>readStringsFromFile(string file_name)
 }
 
 
-pair<char, int> setPosition()
+pair<char, int> getPosition()
 {
 	bool correct;
 	char upperLetter{};
@@ -55,8 +55,8 @@ pair<char, int> setPosition()
 		
 	} while (not correct);
 
-	pair<char, int> checkedCoordinates(upperLetter, number);
-	return checkedCoordinates;
+	pair<char, int> coordinates(upperLetter, number);
+	return coordinates;
 
 }
 
@@ -104,17 +104,17 @@ bool boardValidation(char letter, int number)
 	return correct;
 }
 
-pair<char, int> setStartPosition()
+pair<char, int> getStartPosition()
 {
 	cout << "\nType in coordinate of your piece, which you're going to do a move"
 		<< " (for example: D2) ";
 
-	return setPosition();
+	return getPosition();
 }
 
-pair<char, int> setFinishPosition()
+pair<char, int> getFinishPosition()
 {
 	cout << "\nType in coordinate where you're going to do a move";
 		
-	return setPosition();
+	return getPosition();
 }

@@ -5,13 +5,9 @@
 #include <string>
 
 #include "player.h"
+#include "Background.h"
 
 using namespace std;
-
-/*read file like:
-- chess board,
-- rules,
-- help.*/
 
 vector<string>readStringsFromFile(string file_name); 
 
@@ -21,13 +17,15 @@ void singleMove(Player);
 
 pair<string,string> moveDecision();
 
-pair<char, int> setPosition();
+pair<char, int> getPosition();
 
-pair<char, int> setStartPosition();
+pair<char, int> getStartPosition();
 
-pair<char, int> setFinishPosition();
+pair<char, int> getFinishPosition();
 
 bool boardValidation(char letter, int number);
+
+
 
 
 

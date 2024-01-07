@@ -131,13 +131,13 @@
     <ClCompile Include="BishopPiece.cpp" />
     <ClCompile Include="Black.cpp" />
     <ClCompile Include="functions.cpp" />
-    <ClCompile Include="GueenPiece.cpp" />
     <ClCompile Include="KingPiece.cpp" />
     <ClCompile Include="KnightPiece.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="PawnPiece.cpp" />
     <ClCompile Include="Piece.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="QueenPiece.cpp" />
     <ClCompile Include="RookPiece.cpp" />
     <ClCompile Include="White.cpp" />
   </ItemGroup>
