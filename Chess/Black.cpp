@@ -2,7 +2,9 @@
 
 Black::Black()
 {
+	int nextTurnWhite = 0;
 	correctSign = '-';
+	setTurnCounter(nextTurnWhite);
 }
 
 Black::~Black()

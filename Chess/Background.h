@@ -28,7 +28,7 @@ class Background
 	
 	//static char startSign;
 	int startPieceValue;
-	int turnCounter = 0;
+	/*int turnCounter = 0*/;
 	
 	
 public:
@@ -40,12 +40,11 @@ public:
 	void showRules();
 	void setPiece(pair<char, int> coordinates);
 	pair<char,int> getBoardContent();
-	Player* getPlayer();
 	Piece* getPiece(int value);
 	//static char getStartSign();
 
 	friend bool Piece::lackYourPiece(char letter, int number);
-	
+	friend bool occupiedPosition(char letter, int number);
 	
 };
 

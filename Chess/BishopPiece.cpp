@@ -1,4 +1,5 @@
 #include "BishopPiece.h"
+#include "functions.h"
 
 BishopPiece::BishopPiece(vector<string> table)
 {
@@ -24,17 +25,14 @@ void BishopPiece::getScope(pair<char, int> startPosition)
 				letter = char(int(letter) + bishopStep[i].first);
 				number += bishopStep[i].second;
 
-				if ((number > 8 or number < 1) or 
-					(int(letter) > int('H') or int(letter) < int('A')))
-					break;
 
-				if(lackYourPiece(letter, number))
+				if (lackYourPiece(letter, number)
+					and positionIncludeInBoard(letter, number))
+				{
 					moveScope.push_back({ letter, number });
+				}
 
-				int rowIndex = 10 - number;
-				int columnIndex = 4 + (letter - 65) * 3;
-
-				if (board[rowIndex][columnIndex] != '0')
+				if (occupiedPosition(letter, number))
 					break;
 			}
 		}

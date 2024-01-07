@@ -52,22 +52,6 @@ pair<char,int> Background::getBoardContent()
 	return piece;
 }
 
-Player* Background::getPlayer()
-{
-	Player* person = nullptr;
-	if (turnCounter == 0)
-	{
-		person = new White;
-		turnCounter++;
-	}
-	else
-	{
-		person = new Black;
-		turnCounter--;
-	}
-	return person;
-}
-
 Piece* Background::getPiece(int value)
 {
 	Piece* currentPiece = nullptr;

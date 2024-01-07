@@ -4,8 +4,8 @@
 #include <vector>
 #include <string>
 
-#include "player.h"
 #include "Background.h"
+#include "Player.h"
 
 using namespace std;
 
@@ -25,7 +25,11 @@ pair<char, int> getFinishPosition();
 
 bool boardValidation(char letter, int number);
 
+bool positionIncludeInBoard(char letter, int number);
 
+Player* getPlayer();
+
+bool occupiedPosition(char letter, int number);
 
 
 

@@ -5,7 +5,7 @@ class PawnPiece: public Piece
 {
 	vector<string> board;
 	vector<pair<char, int>> moveScope;
-	int signRow, signColumn, number;
+	int  number;
 	char sign, letter;
 
 public:

@@ -10,6 +10,6 @@ public:
 	White();
 	~White();
 
-	virtual bool validation(pair<char, int> content);
+	//virtual bool validation(pair<char, int> content);
 	virtual void finish();
 };

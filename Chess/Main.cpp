@@ -11,6 +11,7 @@ using namespace std;
 int main()
 {
 
+
 	Background chessGround;
 
 
@@ -18,7 +19,7 @@ int main()
 	do
 	{
 
-		Player* person = chessGround.getPlayer();
+		Player* person = getPlayer();
 
 		pair<char, int> startPosition = getStartPosition();
 
@@ -41,6 +42,7 @@ int main()
 
 	delete person;
 	delete currentPiece;
+
 	} while (!finish);
 }
 	

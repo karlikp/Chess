@@ -6,6 +6,7 @@
 #include <cctype>
 
 #include "functions.h"
+#include "Player.h"
 
 using namespace std;
 
@@ -77,17 +78,10 @@ pair<string, string> moveDecision()
 	return move;
 }
 
-void coutStringVector(vector <string> array)
-{
-	for (int i = 0; i < array.size(); i++)
-		cout << array[i] << "\n";
-	cout << '\n';
-}
-
 bool boardValidation(char letter, int number)
 {
-	bool correct = true;
-
+	bool correct = positionIncludeInBoard(letter,number);
+	 /*
 	if (not (letter <= int('H') and letter >= int('A')))
 	{
 		cout << "\nYour first sign is wrong";
@@ -97,11 +91,30 @@ bool boardValidation(char letter, int number)
 	{
 		cout << "\nYour second sign is wrong";
 		correct = false;
-	}
-	if (not correct)
-		cout << "\nCorrect your answer, please.";
+	}*/
 
+
+	if (not correct)
+	{
+		cout << "\nYour answer is wrong, please correct it: ";
+	}
 	return correct;
+}
+
+bool positionIncludeInBoard(char letter, int number)
+{
+	bool include = true;
+	if ((number > 8 or number < 1) or
+		(int(letter) > int('H') or int(letter) < int('A')))
+		include = false;
+	return include;
+
+}
+void coutStringVector(vector <string> array)
+{
+	for (int i = 0; i < array.size(); i++)
+		cout << array[i] << "\n";
+	cout << '\n';
 }
 
 pair<char, int> getStartPosition()
@@ -114,7 +127,37 @@ pair<char, int> getStartPosition()
 
 pair<char, int> getFinishPosition()
 {
-	cout << "\nType in coordinate where you're going to do a move";
+	cout << "\nType in coordinate where you're going to do a move: ";
 		
 	return getPosition();
+}
+
+Player* getPlayer()
+{
+	Player* person = nullptr;
+	int turnCounter = Player::getTurnCounter();
+	if (turnCounter == 0)
+	{
+		person = new White;
+		turnCounter++;
+	}
+	else
+	{
+		person = new Black;
+		turnCounter--;
+	}
+	return person;
+}
+
+bool occupiedPosition(char letter, int number)
+{
+	bool occupied = false;
+
+	int rowIndex = 10 - number;
+	int columnIndex = 4 + (letter - 65) * 3;
+	vector <string> board = Background::getBoard();
+	if (board[rowIndex][columnIndex] != '0')
+		occupied = true;
+
+	return occupied;
 }
