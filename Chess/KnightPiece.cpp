@@ -36,6 +36,6 @@ void KnightPiece::getScope(pair<char, int> startPosition)
 	}
 }
 
-void KnightPiece::checkMovePossibility(pair<char, int> finishPosition)
+bool KnightPiece::checkMoveAccess(pair<char, int> finishPosition)
 {
 }

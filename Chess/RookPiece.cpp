@@ -45,6 +45,6 @@ void RookPiece::getScope(pair<char, int> startPosition)
 
 }
 
-void RookPiece::checkMovePossibility(pair<char, int> finishPosition)
+bool RookPiece::checkMoveAccess(pair<char, int> finishPosition)
 {
 }

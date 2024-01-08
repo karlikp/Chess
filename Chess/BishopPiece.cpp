@@ -43,6 +43,6 @@ void BishopPiece::getScope(pair<char, int> startPosition)
 	}
 }
 
-void BishopPiece::checkMovePossibility(pair<char, int> finishPosition)
+bool BishopPiece::checkMoveAccess(pair<char, int> finishPosition)
 {
 }

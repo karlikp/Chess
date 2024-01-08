@@ -33,7 +33,7 @@ int main()
 
 		
 
-		currentPiece->checkMovePossibility(chessGround.getBoardContent()); 
+		currentPiece->checkMoveAccess(chessGround.getBoardContent()); 
 
 
 	if (finish)

@@ -25,7 +25,7 @@ void KingPiece::getScope(pair<char, int> startPosition)
 	}
 }
 
-void KingPiece::checkMovePossibility(pair<char, int> finishPosition)
+bool KingPiece::checkMoveAccess(pair<char, int> finishPosition)
 {
 }
 

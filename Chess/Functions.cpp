@@ -161,3 +161,4 @@ bool occupiedPosition(char letter, int number)
 
 	return occupied;
 }
+

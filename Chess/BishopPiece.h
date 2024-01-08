@@ -10,8 +10,8 @@ public:
 
 	BishopPiece(vector<string> board);
 	~BishopPiece();
-	virtual void getScope(pair<char, int> startPosition);
-	virtual void checkMovePossibility(pair<char, int> finishPosition);
+	 virtual void getScope(pair<char, int> startPosition);
+	virtual bool checkMoveAccess(pair<char, int> finishPosition);
 	
 };
 

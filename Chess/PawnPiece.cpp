@@ -52,7 +52,7 @@ void PawnPiece::getScope(pair<char, int> startPosition)
 	}
 }
 
-void PawnPiece::checkMovePossibility(pair<char, int> finishPosition)
+bool PawnPiece::checkMoveAccess(pair<char, int> finishPosition)
 {
 }
 
