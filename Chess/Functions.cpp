@@ -125,7 +125,7 @@ pair<char, int> getStartPosition()
 	return getPosition();
 }
 
-pair<char, int> getFinishPosition()
+pair<char, int> getFinalPosition()
 {
 	cout << "\nType in coordinate where you're going to do a move: ";
 		
@@ -160,5 +160,15 @@ bool occupiedPosition(char letter, int number)
 		occupied = true;
 
 	return occupied;
+}
+
+void showAccessPositions(vector<pair<char, int>> pieceScope)
+{
+	cout << "\nAccess move position for your piece: ";
+
+	for (auto i : pieceScope)
+	{
+		cout << "[" << i.first << "," << i.second << "]";
+	}
 }
 

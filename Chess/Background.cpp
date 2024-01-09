@@ -61,19 +61,19 @@ Piece* Background::getPiece(int value)
 		currentPiece = new PawnPiece(board);
 		break;
 	case 2:
-		currentPiece = new KnightPiece(board);
+		currentPiece = new KnightPiece;
 		break;
 	case 3:
-		currentPiece = new BishopPiece(board);
+		currentPiece = new BishopPiece;
 		break;
 	case 4:
-		currentPiece = new RookPiece(board);
+		currentPiece = new RookPiece;
 		break;
 	case 5:
-		currentPiece = new QueenPiece(board);
+		currentPiece = new QueenPiece;
 		break;
 	case 6:
-		currentPiece = new KingPiece(board);
+		currentPiece = new KingPiece;
 		break;
 	}
 	return currentPiece;

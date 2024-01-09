@@ -8,15 +8,18 @@ using namespace std;
 class Piece
 {
 	vector <string> board;
+	vector<pair<char, int>> moveScope;
+
+
+
 public:
 	Piece();
-	Piece(vector<string> board);
 	~Piece();
-	virtual void getScope(pair<char, int> startPosition) = 0;
+	void insertMoveScope(vector<pair<char, int>> tempMoveScope);
+	virtual vector<pair<char, int>> getScope(pair<char, int> startPosition) = 0;
 	virtual bool checkMoveAccess(pair<char, int> finishPosition) = 0;
-	void checkDetection();
 	bool lackYourPiece(char letter, int number);
-	/*bool checkAccessFinishPosition (pair<char,int> finishPosition)*/
+	bool scopeIsEnough(pair<char, int> finishPosition);
 
 };
 

@@ -27,9 +27,17 @@ int main()
 
 		Piece* currentPiece = chessGround.getPiece(chessGround.getBoardContent().second);
 
-		currentPiece->getScope(startPosition);
+		currentPiece -> insertMoveScope( currentPiece->getScope(startPosition));
 
-		getFinishPosition();
+		
+		pair<char, int> finalPosition = getFinalPosition();
+
+		if(currentPiece -> scopeIsEnough(finalPosition));
+			/*and lackCheck())*/
+
+
+
+		
 
 		
 

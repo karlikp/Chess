@@ -5,7 +5,7 @@ using namespace std;
 #include "KnightPiece.h"
 #include "functions.h"
 
-KnightPiece::KnightPiece(vector<string> table)
+KnightPiece::KnightPiece()
 {
 }
 
@@ -13,8 +13,10 @@ KnightPiece::~KnightPiece()
 {
 }
 
-void KnightPiece::getScope(pair<char, int> startPosition)
+vector<pair<char, int>> KnightPiece::getScope(pair<char, int> startPosition)
 {
+	vector<pair<char, int>> tempMoveScope;
+
 	vector<pair<int, int>> knightStep
 	{ {2,1}, {1,2}, {-1,2}, {-2,1}, {-2,-1}, {-1,-2}, {1,-2}, {2,-1} };
 
@@ -28,14 +30,13 @@ void KnightPiece::getScope(pair<char, int> startPosition)
 		
 		if (lackYourPiece(letter, number)
 			and positionIncludeInBoard(letter, number))
-			moveScope.push_back({ letter, number });
+			tempMoveScope.push_back({ letter, number });
 	}
-	for (auto i : moveScope)
-	{
-		cout << "[" << i.first << "," << i.second << "]";
-	}
+	showAccessPositions(tempMoveScope);
+	return tempMoveScope;
 }
 
 bool KnightPiece::checkMoveAccess(pair<char, int> finishPosition)
 {
+	return 0;
 }

@@ -1,7 +1,7 @@
 #include "RookPiece.h"
 #include "functions.h"
 
-RookPiece::RookPiece(vector<string> table)
+RookPiece::RookPiece()
 {
 }
 
@@ -9,42 +9,40 @@ RookPiece::~RookPiece()
 {
 }
 
-void RookPiece::getScope(pair<char, int> startPosition)
+vector<pair<char, int>> RookPiece::getScope(pair<char, int> startPosition)
 {
+	vector<pair<char, int>> tempMoveScope;
+
 	vector<pair<int, int>> rookStep = { {1,0}, {0,-1}, {-1,0}, {0,1} };
 
+	
+	for (int i = 0; i < 4; i++)
 	{
-		for (int i = 0; i < 4; i++)
+		char letter = startPosition.first;
+		int number = startPosition.second;
+
+		for (int j = 0; j < 7; j++)
 		{
-			char letter = startPosition.first;
-			int number = startPosition.second;
+			letter = char(int(letter) + rookStep[i].first);
+			number += rookStep[i].second;
 
-			for (int j = 0; j < 7; j++)
+
+			if (lackYourPiece(letter, number)
+				and positionIncludeInBoard(letter, number))
 			{
-				letter = char(int(letter) + rookStep[i].first);
-				number += rookStep[i].second;
-
-
-				if (lackYourPiece(letter, number)
-					and positionIncludeInBoard(letter, number))
-				{
-					moveScope.push_back({ letter, number });
-				}
-
-				if (occupiedPosition(letter, number)
-					or (not positionIncludeInBoard(letter, number)))
-					break;
+				tempMoveScope.push_back({ letter, number });
 			}
+
+			if (occupiedPosition(letter, number)
+				or (not positionIncludeInBoard(letter, number)))
+				break;
 		}
 	}
-	for (auto i : moveScope)
-	{
-		cout << "[" << i.first << "," << i.second << "]";
-	}
-
-
+	showAccessPositions(tempMoveScope);
+	return tempMoveScope;
 }
 
 bool RookPiece::checkMoveAccess(pair<char, int> finishPosition)
 {
+	return 0;
 }

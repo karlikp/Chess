@@ -13,8 +13,9 @@ PawnPiece::~PawnPiece()
 {
 }
 
-void PawnPiece::getScope(pair<char, int> startPosition)
+vector<pair<char, int>> PawnPiece::getScope(pair<char, int> startPosition)
 {
+
 	letter = startPosition.first;
 	number = startPosition.second;
 
@@ -28,32 +29,31 @@ void PawnPiece::getScope(pair<char, int> startPosition)
 	if (singleStepAccess and sign == '-'
 		and positionIncludeInBoard(letter, number - 1))
 	{
-		moveScope.push_back({ letter, number - 1 });
+		tempMoveScope.push_back({ letter, number - 1 });
 
 		if (number == 7 and doubleStepAccess
 			and positionIncludeInBoard(letter, number - 2))
-			moveScope.push_back({ letter, number - 2 });
+			tempMoveScope.push_back({ letter, number - 2 });
 	}
 	else if (singleStepAccess and sign == ' '
 		and positionIncludeInBoard(letter, number + 1))
 	{
-		moveScope.push_back({letter, number + 1 });
+		tempMoveScope.push_back({letter, number + 1 });
 
 		if (number == 2 and doubleStepAccess 
 			and positionIncludeInBoard(letter, number + 2))
-			moveScope.push_back({letter, number + 2});
+			tempMoveScope.push_back({letter, number + 2});
 	}
 
 	checkAttackScope();
 	
-	for (auto i : moveScope)
-	{
-		cout << "[" << i.first << "," << i.second << "]";
-	}
+	showAccessPositions(tempMoveScope);
+	return tempMoveScope;
 }
 
 bool PawnPiece::checkMoveAccess(pair<char, int> finishPosition)
 {
+	return 0;
 }
 
 bool PawnPiece::doubleStepIsEmpty()
@@ -88,13 +88,13 @@ void PawnPiece::checkAttackScope()
 			and lackYourPiece(char(int(letter) - 1), number - 1)
 			and positionIncludeInBoard(char(int(letter) - 1), number - 1))
 		{
-			moveScope.push_back({ char(int(letter) - 1), number - 1 });
+			tempMoveScope.push_back({ char(int(letter) - 1), number - 1 });
 		}
 		if (occupiedPosition(char(int(letter) + 1), number - 1)
 			and lackYourPiece(char(int(letter) + 1), number - 1)
 			and positionIncludeInBoard(char(int(letter) + 1), number - 1))
 		{
-			moveScope.push_back({ char(int(letter) + 1), number - 1 });
+			tempMoveScope.push_back({ char(int(letter) + 1), number - 1 });
 		}
 	}
 	else
@@ -103,13 +103,13 @@ void PawnPiece::checkAttackScope()
 			and lackYourPiece(char(int(letter) - 1), number + 1)
 			and positionIncludeInBoard(char(int(letter) - 1), number + 1))
 		{
-			moveScope.push_back({ char(int(letter) - 1), number + 1 });
+			tempMoveScope.push_back({ char(int(letter) - 1), number + 1 });
 		}
 		if (occupiedPosition(char(int(letter) + 1), number + 1)
 			and lackYourPiece(char(int(letter) + 1), number + 1)
 			and positionIncludeInBoard(char(int(letter) + 1), number + 1))
 		{
-			moveScope.push_back({ char(int(letter) + 1), number + 1 });
+			tempMoveScope.push_back({ char(int(letter) + 1), number + 1 });
 		}
 	}
 }

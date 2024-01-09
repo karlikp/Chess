@@ -3,14 +3,12 @@
 #pragma once
 class BishopPiece: public Piece
 {
-	vector<pair<char, int>> moveScope;
-	vector<string> board;
 
 public:
 
-	BishopPiece(vector<string> board);
+	BishopPiece();
 	~BishopPiece();
-	 virtual void getScope(pair<char, int> startPosition);
+	virtual vector<pair<char, int>> getScope(pair<char, int> startPosition);
 	virtual bool checkMoveAccess(pair<char, int> finishPosition);
 	
 };

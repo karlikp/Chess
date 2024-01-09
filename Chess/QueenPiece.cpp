@@ -1,7 +1,7 @@
 #include "QueenPiece.h"
 #include "functions.h"
 
-QueenPiece::QueenPiece(vector<string> table)
+QueenPiece::QueenPiece()
 {
 }
 
@@ -9,8 +9,10 @@ QueenPiece::~QueenPiece()
 {
 }
 
-void QueenPiece::getScope(pair<char, int> startPosition)
+vector<pair<char, int>> QueenPiece::getScope(pair<char, int> startPosition)
 {
+	vector<pair<char, int>> tempMoveScope;
+
 	vector<pair<int, int>> bishopStep = { {1,1}, {1,-1}, {-1,-1}, {-1,1} };
 
 	for (int i = 0; i < 4; i++)
@@ -27,7 +29,7 @@ void QueenPiece::getScope(pair<char, int> startPosition)
 			if (lackYourPiece(letter, number)
 				and positionIncludeInBoard(letter, number))
 			{
-				moveScope.push_back({ letter, number });
+				tempMoveScope.push_back({ letter, number });
 			}
 
 			if (occupiedPosition(letter, number))
@@ -50,7 +52,7 @@ void QueenPiece::getScope(pair<char, int> startPosition)
 				if (lackYourPiece(letter, number)
 					and positionIncludeInBoard(letter, number))
 				{
-					moveScope.push_back({ letter, number });
+					tempMoveScope.push_back({ letter, number });
 				}
 
 				if (occupiedPosition(letter, number)
@@ -59,12 +61,11 @@ void QueenPiece::getScope(pair<char, int> startPosition)
 			}
 		}
 	}
-	for (auto i : moveScope)
-	{
-		cout << "[" << i.first << "," << i.second << "]";
-	}
+	showAccessPositions(tempMoveScope);
+	return tempMoveScope;
 }
 
 bool QueenPiece::checkMoveAccess(pair<char, int> finishPosition)
 {
+	return 0;
 }

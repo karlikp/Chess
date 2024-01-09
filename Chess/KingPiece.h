@@ -4,14 +4,12 @@
 class KingPiece: public Piece
 {
 	bool Check = false;
-	vector<pair<char, int>> moveScope;
-	vector<string> board;
 
 public:
 
-	KingPiece(vector<string> board);
+	KingPiece();
 	~KingPiece();
-	virtual void getScope(pair<char, int> startPosition);
+	virtual vector<pair<char, int>> getScope(pair<char, int> startPosition);
 	virtual bool checkMoveAccess(pair<char, int> finishPosition);
 };
 

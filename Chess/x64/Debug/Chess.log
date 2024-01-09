@@ -1,41 +1,6 @@
-﻿  Background.cpp
-  BishopPiece.cpp
-C:\Users\Ryzen\Desktop\Git_repos\Chess_cpp\Chess\Piece.h(21,1): error C2143: syntax error: missing ';' before '}'
-  (compiling source file 'Background.cpp')
-  
-C:\Users\Ryzen\Desktop\Git_repos\Chess_cpp\Chess\Piece.h(21,1): error C2143: syntax error: missing ';' before '}'
-  (compiling source file 'BishopPiece.cpp')
-  
-  KingPiece.cpp
-C:\Users\Ryzen\Desktop\Git_repos\Chess_cpp\Chess\Piece.h(21,1): error C2143: syntax error: missing ';' before '}'
-  (compiling source file 'KingPiece.cpp')
-  
-  KnightPiece.cpp
-C:\Users\Ryzen\Desktop\Git_repos\Chess_cpp\Chess\Piece.h(21,1): error C2143: syntax error: missing ';' before '}'
-  (compiling source file 'KnightPiece.cpp')
-  
+﻿  functions.cpp
   Main.cpp
-C:\Users\Ryzen\Desktop\Git_repos\Chess_cpp\Chess\Piece.h(21,1): error C2143: syntax error: missing ';' before '}'
-  (compiling source file 'Main.cpp')
-  
+C:\Users\Ryzen\Desktop\Git_repos\Chess_cpp\Chess\Main.cpp(35,51): warning C4390: ';': empty controlled statement found; is this the intent?
   PawnPiece.cpp
-C:\Users\Ryzen\Desktop\Git_repos\Chess_cpp\Chess\Piece.h(21,1): error C2143: syntax error: missing ';' before '}'
-  (compiling source file 'PawnPiece.cpp')
-  
-  Piece.cpp
-C:\Users\Ryzen\Desktop\Git_repos\Chess_cpp\Chess\Piece.h(21,1): error C2143: syntax error: missing ';' before '}'
-  (compiling source file 'Piece.cpp')
-  
-  QueenPiece.cpp
-C:\Users\Ryzen\Desktop\Git_repos\Chess_cpp\Chess\Piece.h(21,1): error C2143: syntax error: missing ';' before '}'
-  (compiling source file 'QueenPiece.cpp')
-  
-  RookPiece.cpp
-C:\Users\Ryzen\Desktop\Git_repos\Chess_cpp\Chess\Piece.h(21,1): error C2143: syntax error: missing ';' before '}'
-  (compiling source file 'RookPiece.cpp')
-  
-  functions.cpp
-C:\Users\Ryzen\Desktop\Git_repos\Chess_cpp\Chess\Piece.h(21,1): error C2143: syntax error: missing ';' before '}'
-  (compiling source file 'functions.cpp')
-  
   Generating Code...
+  Chess.vcxproj -> C:\Users\Ryzen\Desktop\Git_repos\Chess_cpp\x64\Debug\Chess.exe

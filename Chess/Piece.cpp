@@ -5,18 +5,15 @@ Piece::Piece()
 {
 }
 
-Piece::Piece(vector<string> table)
-{
-	board = table;
-}
-
 Piece::~Piece()
 {
 }
 
-void Piece::checkDetection()
+void Piece::insertMoveScope(vector <pair<char, int>> tempMoveScope)
 {
+	moveScope = tempMoveScope;
 }
+
 
 bool Piece::lackYourPiece(char letter, int number)
 {
@@ -32,6 +29,20 @@ bool Piece::lackYourPiece(char letter, int number)
 		lackOwnPiece = false;
 
 	return lackOwnPiece;
+}
+
+bool Piece::scopeIsEnough(pair<char, int> finishPosition)
+{
+	bool access = false;
+	for (auto i : moveScope)
+	{
+		if (i == finishPosition)
+		{
+			access = true;
+			break;
+		}
+	}
+	return access;
 }
 
 

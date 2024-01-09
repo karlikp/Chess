@@ -1,19 +1,20 @@
 #include "BishopPiece.h"
 #include "functions.h"
 
-BishopPiece::BishopPiece(vector<string> table)
+BishopPiece::BishopPiece()
 {
-	board = table;
 }
 
 BishopPiece::~BishopPiece()
 {
 }
 
-void BishopPiece::getScope(pair<char, int> startPosition)
+vector<pair<char, int>> BishopPiece::getScope(pair<char, int> startPosition)
 {
-	vector<pair<int, int>> bishopStep = { {1,1}, {1,-1}, {-1,-1}, {-1,1} };
+	vector<pair<char, int>> tempMoveScope;
 
+	vector<pair<int, int>> bishopStep = { {1,1}, {1,-1}, {-1,-1}, {-1,1} };
+	
 	{		
 		for (int i = 0; i < 4; i++)
 		{
@@ -29,7 +30,7 @@ void BishopPiece::getScope(pair<char, int> startPosition)
 				if (lackYourPiece(letter, number)
 					and positionIncludeInBoard(letter, number))
 				{
-					moveScope.push_back({ letter, number });
+					tempMoveScope.push_back({ letter, number });
 				}
 
 				if (occupiedPosition(letter, number))
@@ -37,12 +38,11 @@ void BishopPiece::getScope(pair<char, int> startPosition)
 			}
 		}
 	}
-	for (auto i : moveScope)
-	{
-		cout << "[" << i.first << "," << i.second << "]";
-	}
+	showAccessPositions(tempMoveScope);
+	return tempMoveScope;
 }
 
 bool BishopPiece::checkMoveAccess(pair<char, int> finishPosition)
 {
+	return 0;
 }

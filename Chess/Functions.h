@@ -21,7 +21,7 @@ pair<char, int> getPosition();
 
 pair<char, int> getStartPosition();
 
-pair<char, int> getFinishPosition();
+pair<char, int> getFinalPosition();
 
 bool boardValidation(char letter, int number);
 
@@ -31,7 +31,7 @@ Player* getPlayer();
 
 bool occupiedPosition(char letter, int number);
 
-
+void showAccessPositions(vector<pair<char, int>>pieceScope);
 
 
 
