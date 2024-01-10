@@ -31,18 +31,51 @@ bool Piece::lackYourPiece(char letter, int number)
 	return lackOwnPiece;
 }
 
-bool Piece::scopeIsEnough(pair<char, int> finishPosition)
+
+bool Piece::checkMoveAccess()
+{
+	if (scopeIsEnough() and lackCheck())
+		return true;
+	else
+		return false;
+}
+
+bool Piece::scopeIsEnough()
 {
 	bool access = false;
-	for (auto i : moveScope)
+	for (auto coords : moveScope)
 	{
-		if (i == finishPosition)
+		if (coords.first == letterCoord and coords.second == numberCoord)
 		{
 			access = true;
 			break;
 		}
 	}
 	return access;
+}
+
+bool Piece::lackCheck()
+{
+	
+	int rowIndex = 10 - numberCoord;
+	int columnIndex = 4 + (letterCoord - 'A') * 3;
+	
+	if (board[rowIndex][columnIndex] != '6')
+		return true;
+	else
+		return false;
+
+}
+
+pair<char, int> Piece::getFinalPosition()
+{
+	cout << "\nType in coordinate where you're going to do a move: ";
+
+	pair<char,int> finalPosition =  getPosition();
+	
+	letterCoord = finalPosition.first;
+	numberCoord = finalPosition.second;
+	return  finalPosition;
 }
 
 

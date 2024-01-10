@@ -26,10 +26,8 @@ class Background
 	vector <string> rules;
 	static vector <string> board;
 	
-	//static char startSign;
-	int startPieceValue;
+	int pieceValue, startRowIndex, startColumnIndex, startSignColumnIndex;
 	/*int turnCounter = 0*/;
-	
 	
 public:
 	static char tempSign;
@@ -41,10 +39,11 @@ public:
 	void setPiece(pair<char, int> coordinates);
 	pair<char,int> getBoardContent();
 	Piece* getPiece(int value);
-	//static char getStartSign();
+	void move(pair<char, int> finalPosition);
 
 	friend bool Piece::lackYourPiece(char letter, int number);
 	friend bool occupiedPosition(char letter, int number);
+
 	
 };
 

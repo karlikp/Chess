@@ -18,6 +18,7 @@ int main()
 	bool finish = false;
 	do
 	{
+		chessGround.showBoard();
 
 		Player* person = getPlayer();
 
@@ -30,18 +31,16 @@ int main()
 		currentPiece -> insertMoveScope( currentPiece->getScope(startPosition));
 
 		
-		pair<char, int> finalPosition = getFinalPosition();
+		pair<char, int> finalPosition = currentPiece->getFinalPosition();
 
-		if(currentPiece -> scopeIsEnough(finalPosition));
-			/*and lackCheck())*/
+		if (currentPiece->checkMoveAccess())
+			chessGround.move(finalPosition);
 
 
-
-		
 
 		
 
-		currentPiece->checkMoveAccess(chessGround.getBoardContent()); 
+		
 
 
 	if (finish)

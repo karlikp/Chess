@@ -18,7 +18,7 @@ Background::Background()
 	vector <string> intro = readStringsFromFile("introduction.txt");
 	coutStringVector(intro);
 	board = readStringsFromFile("chessBoard.txt");
-	coutStringVector(board);
+	//coutStringVector(board);
 	rules = readStringsFromFile("rules.txt");
 	coutStringVector(rules);
 }
@@ -35,20 +35,19 @@ void Background::showRules()
 
 void Background::setPiece(pair<char, int> coordinates)
 {
-	int rowIndex = 10 - coordinates.second;
-	int columnIndex = 4 + (coordinates.first - int('A')) * 3;
-	int signColumnIndex = columnIndex - 1;
+	startRowIndex = 10 - coordinates.second;
+	startColumnIndex = 4 + (coordinates.first - int('A')) * 3;
+	startSignColumnIndex = startColumnIndex - 1;
 
-	tempSign = board[rowIndex][signColumnIndex];
-	startPieceValue = board[rowIndex][columnIndex] - int('0');
+	tempSign = board[startRowIndex][startSignColumnIndex];
+	pieceValue = board[startRowIndex][startColumnIndex] - int('0');
 
 }
 
 pair<char,int> Background::getBoardContent()
 {
-	pair<char, int> piece(tempSign, startPieceValue);
-	//piece.first = pieceSign;
-	//piece.second = pieceValue;
+	pair<char, int> piece(tempSign, pieceValue);
+	
 	return piece;
 }
 
@@ -79,5 +78,20 @@ Piece* Background::getPiece(int value)
 	return currentPiece;
 }
 
+void Background::move(pair<char, int> finalPosition)
+{
+	int letterCoord = finalPosition.first;
+	char numberCoord = finalPosition.second;
+
+	int rowIndex = 10 - numberCoord;
+	int columnIndex = 4 + (letterCoord - int('A')) * 3;
+	int signColumnIndex = columnIndex - 1;
+
+	board[rowIndex][columnIndex] = char(pieceValue + int('0'));
+	board[rowIndex][signColumnIndex] = tempSign;
+
+	board[startRowIndex][startColumnIndex] = '0';
+	board[startRowIndex][startSignColumnIndex] = ' ';
+}
 
 

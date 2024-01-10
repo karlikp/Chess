@@ -9,7 +9,8 @@ class Piece
 {
 	vector <string> board;
 	vector<pair<char, int>> moveScope;
-
+	int numberCoord;
+	char letterCoord;
 
 
 public:
@@ -17,9 +18,15 @@ public:
 	~Piece();
 	void insertMoveScope(vector<pair<char, int>> tempMoveScope);
 	virtual vector<pair<char, int>> getScope(pair<char, int> startPosition) = 0;
-	virtual bool checkMoveAccess(pair<char, int> finishPosition) = 0;
+
+	pair<char, int> getFinalPosition();
+	bool checkMoveAccess();
+	bool scopeIsEnough();
+	bool lackCheck();
 	bool lackYourPiece(char letter, int number);
-	bool scopeIsEnough(pair<char, int> finishPosition);
+	
+	
+	
 
 };
 

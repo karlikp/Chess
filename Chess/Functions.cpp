@@ -10,8 +10,6 @@
 
 using namespace std;
 
-
-// First letters then numbers
 vector<string>readStringsFromFile(string file_name)
 {
 	vector<string> array;
@@ -26,13 +24,12 @@ vector<string>readStringsFromFile(string file_name)
 		{
 			array.push_back(line);
 			counter++;
-			if (line.empty())                  // be careful: an empty line might be read
+			if (line.empty())                
 				continue;
 		}
 	}
 	return array;
 }
-
 
 pair<char, int> getPosition()
 {
@@ -81,19 +78,7 @@ pair<string, string> moveDecision()
 bool boardValidation(char letter, int number)
 {
 	bool correct = positionIncludeInBoard(letter,number);
-	 /*
-	if (not (letter <= int('H') and letter >= int('A')))
-	{
-		cout << "\nYour first sign is wrong";
-		correct = false;
-	}
-	if (not (number <= 8 and number >= 1))
-	{
-		cout << "\nYour second sign is wrong";
-		correct = false;
-	}*/
-
-
+	
 	if (not correct)
 	{
 		cout << "\nYour answer is wrong, please correct it: ";
@@ -125,12 +110,6 @@ pair<char, int> getStartPosition()
 	return getPosition();
 }
 
-pair<char, int> getFinalPosition()
-{
-	cout << "\nType in coordinate where you're going to do a move: ";
-		
-	return getPosition();
-}
 
 Player* getPlayer()
 {
