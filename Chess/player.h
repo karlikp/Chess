@@ -9,6 +9,8 @@ class Player
 {
 	bool check = false; //I needn't know which king is checking, so te variable should be in base class
 	static int turnCounter;
+	char currentSign = {};
+
 public:
 
 	Player();
@@ -20,9 +22,11 @@ public:
 	
 	virtual void finish() = 0;
 
-	friend Player* getPlayer();
+	pair<char, int> setStartPosition();
 
-	static void setTurnCounter(int turnNumber);
+	bool validationSign(pair<char, int> coords);
+
+	friend Player* getPlayer();
 
 };
 

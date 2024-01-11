@@ -13,9 +13,7 @@ vector<string>readStringsFromFile(string file_name);
 
 void coutStringVector(vector <string> array);
 
-void singleMove(Player);
-
-pair<string,string> moveDecision();
+//pair<string,string> moveDecision();
 
 pair<char, int> getPosition();
 
@@ -30,6 +28,8 @@ Player* getPlayer();
 bool occupiedPosition(char letter, int number);
 
 void showAccessPositions(vector<pair<char, int>>pieceScope);
+
+char getSign(pair<char, int> coords)
 
 //pair<char, int> getContainPosition(;
 

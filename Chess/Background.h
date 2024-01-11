@@ -43,6 +43,7 @@ public:
 
 	friend bool Piece::lackYourPiece(char letter, int number);
 	friend bool occupiedPosition(char letter, int number);
+	friend bool Player::validationSign(pair<char, int> coords);
 
 	
 };
