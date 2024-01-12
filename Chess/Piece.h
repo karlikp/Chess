@@ -16,15 +16,15 @@ class Piece
 public:
 	Piece();
 	~Piece();
-	void insertMoveScope(vector<pair<char, int>> tempMoveScope);
+	//void insertMoveScope(vector<pair<char, int>> tempMoveScope);
 	virtual vector<pair<char, int>> getScope(pair<char, int> startPosition) = 0;
 
 	pair<char, int> getFinalPosition();
-	bool checkMoveAccess();
-	bool scopeIsEnough();
+	bool moveValidation();
+	bool scopeValidation();
 	bool lackCheck();
 	bool lackYourPiece(char letter, int number);
-	
+	bool checkEmptinessScope();
 	
 	
 

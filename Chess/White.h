@@ -1,9 +1,11 @@
 #include "Player.h"
 
+//redundant 
+
 #pragma once
 class White : public Player
 {
-	char correctSign;
+	
 
 public:
 

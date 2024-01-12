@@ -45,12 +45,6 @@
     <ClCompile Include="Background.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="White.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Black.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="QueenPiece.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -84,12 +78,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Background.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="White.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Black.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

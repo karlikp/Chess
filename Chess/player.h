@@ -8,25 +8,23 @@ using namespace std;
 class Player
 {
 	bool check = false; //I needn't know which king is checking, so te variable should be in base class
-	static int turnCounter;
-	char currentSign = {};
+	int turnGuard;
+	char currentSign = ' ';
+	pair<char, int> blackKing{ 'E', 1 }, whiteKing{ 'A', 1 };
+
+	
 
 public:
 
 	Player();
 	~Player();
-
-	static int getTurnCounter();
-	
-	virtual bool returnCheck();
-	
-	virtual void finish() = 0;
-
-	pair<char, int> setStartPosition();
-
+;
+	pair<char, int> getStartPosition();
 	bool validationSign(pair<char, int> coords);
+	void changeTurn();
 
-	friend Player* getPlayer();
+	bool returnCheck();
+	void finish();
 
 };
 

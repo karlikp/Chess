@@ -6,7 +6,6 @@
 #include <cctype>
 
 #include "functions.h"
-#include "Player.h"
 
 using namespace std;
 
@@ -57,23 +56,6 @@ pair<char, int> getPosition()
 	return coordinates;
 
 }
-//
-//pair<string, string> moveDecision()
-//{
-//	string start, destination;
-//
-//	
-//	getline(cin, start);
-//	//function check correctness
-//	cout << "\nType in the coordinate where you're going to shift the chosen piece (e.q. D4): ";
-//	getline(cin, destination);
-//	//function check correctness
-//	pair <string, string> move;
-//	move.first = start;
-//	move.second = destination;
-//
-//	return move;
-//}
 
 bool boardValidation(char letter, int number)
 {
@@ -100,39 +82,6 @@ void coutStringVector(vector <string> array)
 	for (int i = 0; i < array.size(); i++)
 		cout << array[i] << "\n";
 	cout << '\n';
-}
-
-
-
-//pair<char, int> getStartPosition()
-//{
-//	cout << "\nType in coordinate of your piece, which you're going to do a move"
-//		<< " (for example: D2) ";
-//	pair<char, int> coords;
-//	char sign;
-//	do
-//	{
-//		coords = getPosition();
-//		sign = getSign(coords)
-//	}while(coords.second != 0 and sign    )
-//}
-
-
-Player* getPlayer()
-{
-	Player* person = nullptr;
-	int turnCounter = Player::getTurnCounter();
-	if (turnCounter == 0)
-	{
-		person = new White;
-		turnCounter++;
-	}
-	else
-	{
-		person = new Black;
-		turnCounter--;
-	}
-	return person;
 }
 
 bool occupiedPosition(char letter, int number)

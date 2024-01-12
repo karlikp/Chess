@@ -13,42 +13,42 @@ int main()
 
 
 	Background chessGround;
-
+	Player person;
 
 	bool finish = false;
 	do
 	{
 		chessGround.showBoard();
+		pair<char, int> startPosition;
+		Piece* currentPiece;
+		do
+		{
+			startPosition = person.getStartPosition();
 
-		Player* person = getPlayer();
+			currentPiece = chessGround.getPiece(startPosition.second);
 
-		pair<char, int> startPosition = getStartPosition();
+			currentPiece->getScope(startPosition);
 
-		chessGround.setPiece(startPosition);
+		} while (currentPiece->checkEmptinessScope());
 
-		Piece* currentPiece = chessGround.getPiece(chessGround.getBoardContent().second);
+			chessGround.setPiece(startPosition);
 
-		currentPiece -> insertMoveScope( currentPiece->getScope(startPosition));
+			
 
+	//		currentPiece->insertMoveScope(currentPiece->getScope(startPosition));
+		
 		
 		pair<char, int> finalPosition = currentPiece->getFinalPosition();
 
-		if (currentPiece->checkMoveAccess())
+		if (currentPiece->moveValidation())
 			chessGround.move(finalPosition);
 
 
 
 		
-
-		
-
-
-	if (finish)
-		person -> finish();
-
-
-	delete person;
 	delete currentPiece;
+
+	person.changeTurn();
 
 	} while (!finish);
 }

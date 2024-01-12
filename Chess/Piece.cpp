@@ -9,10 +9,10 @@ Piece::~Piece()
 {
 }
 
-void Piece::insertMoveScope(vector <pair<char, int>> tempMoveScope)
-{
-	moveScope = tempMoveScope;
-}
+//void Piece::insertMoveScope(vector <pair<char, int>> tempMoveScope)
+//{
+//	moveScope = tempMoveScope;
+//}
 
 
 bool Piece::lackYourPiece(char letter, int number)
@@ -32,26 +32,25 @@ bool Piece::lackYourPiece(char letter, int number)
 }
 
 
-bool Piece::checkMoveAccess()
+bool Piece::moveValidation()
 {
-	if (scopeIsEnough() and lackCheck())
+	if (scopeValidation() and lackCheck())
 		return true;
 	else
 		return false;
 }
 
-bool Piece::scopeIsEnough()
+bool Piece::scopeValidation()
 {
-	bool access = false;
 	for (auto coords : moveScope)
 	{
 		if (coords.first == letterCoord and coords.second == numberCoord)
 		{
-			access = true;
-			break;
+			return true;
 		}
 	}
-	return access;
+	cout << "\n The position isn't access. Type in coorect move position: ";
+	return false;
 }
 
 bool Piece::lackCheck()
@@ -70,12 +69,19 @@ bool Piece::lackCheck()
 pair<char, int> Piece::getFinalPosition()
 {
 	cout << "\nType in coordinate where you're going to do a move: ";
+	pair<char, int> finalPosition;
+	do
+	{
+		finalPosition = getPosition();
+		letterCoord = finalPosition.first;
+		numberCoord = finalPosition.second;
 
-	pair<char,int> finalPosition =  getPosition();
-	
-	letterCoord = finalPosition.first;
-	numberCoord = finalPosition.second;
-	return  finalPosition;
+	} while (not scopeValidation());
+
+	return finalPosition;
 }
 
-
+bool Piece::checkEmptinessScope()
+{
+	return moveScope.empty();
+}

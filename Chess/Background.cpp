@@ -44,17 +44,15 @@ void Background::setPiece(pair<char, int> coordinates)
 
 }
 
-pair<char,int> Background::getBoardContent()
+int Background::getPieceValue()
 {
-	pair<char, int> piece(tempSign, pieceValue);
-	
-	return piece;
+	return pieceValue;
 }
 
-Piece* Background::getPiece(int value)
+Piece* Background::getPiece(int pieceValue)
 {
 	Piece* currentPiece = nullptr;
-	switch (value)
+	switch (pieceValue)
 	{
 	case 1:
 		currentPiece = new PawnPiece(board);

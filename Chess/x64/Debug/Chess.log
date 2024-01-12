@@ -1,34 +1,6 @@
-﻿  Background.cpp
-  BishopPiece.cpp
-C:\Users\Ryzen\Desktop\Git_repos\Chess_cpp\Chess\White.h(4,7): error C2143: syntax error: missing ';' before '<class-head>'
-  (compiling source file 'Background.cpp')
-  
-C:\Users\Ryzen\Desktop\Git_repos\Chess_cpp\Chess\BishopPiece.cpp(4,14): error C2143: syntax error: missing ';' before 'BishopPiece::{ctor}'
-  Black.cpp
-C:\Users\Ryzen\Desktop\Git_repos\Chess_cpp\Chess\Black.cpp(7,2): error C3861: 'setTurnCounter': identifier not found
-  KingPiece.cpp
-C:\Users\Ryzen\Desktop\Git_repos\Chess_cpp\Chess\KingPiece.cpp(4,12): error C2143: syntax error: missing ';' before 'KingPiece::{ctor}'
-  KnightPiece.cpp
-C:\Users\Ryzen\Desktop\Git_repos\Chess_cpp\Chess\KnightPiece.cpp(8,14): error C2143: syntax error: missing ';' before 'KnightPiece::{ctor}'
-  Main.cpp
-C:\Users\Ryzen\Desktop\Git_repos\Chess_cpp\Chess\Main.cpp(9,7): error C2143: syntax error: missing ';' before 'using namespace'
-  PawnPiece.cpp
-C:\Users\Ryzen\Desktop\Git_repos\Chess_cpp\Chess\White.h(4,7): error C2143: syntax error: missing ';' before '<class-head>'
-  (compiling source file 'PawnPiece.cpp')
-  
+﻿  functions.cpp
   Piece.cpp
-C:\Users\Ryzen\Desktop\Git_repos\Chess_cpp\Chess\White.h(4,7): error C2143: syntax error: missing ';' before '<class-head>'
-  (compiling source file 'Piece.cpp')
-  
   Player.cpp
-C:\Users\Ryzen\Desktop\Git_repos\Chess_cpp\Chess\Player.cpp(4,1): error C2144: syntax error: 'int' should be preceded by ';'
-C:\Users\Ryzen\Desktop\Git_repos\Chess_cpp\Chess\Player.cpp(51,42): error C2065: 'currentSign': undeclared identifier
-  QueenPiece.cpp
-C:\Users\Ryzen\Desktop\Git_repos\Chess_cpp\Chess\QueenPiece.cpp(4,13): error C2143: syntax error: missing ';' before 'QueenPiece::{ctor}'
-  RookPiece.cpp
-C:\Users\Ryzen\Desktop\Git_repos\Chess_cpp\Chess\RookPiece.cpp(4,12): error C2143: syntax error: missing ';' before 'RookPiece::{ctor}'
-  White.cpp
-C:\Users\Ryzen\Desktop\Git_repos\Chess_cpp\Chess\White.cpp(7,2): error C3861: 'setTurnCounter': identifier not found
-  functions.cpp
-C:\Users\Ryzen\Desktop\Git_repos\Chess_cpp\Chess\functions.cpp(11,7): error C2143: syntax error: missing ';' before 'using namespace'
+C:\Users\Ryzen\Desktop\Git_repos\Chess_cpp\Chess\Player.cpp(20,7): warning C4101: 'sign': unreferenced local variable
   Generating Code...
+  Chess.vcxproj -> C:\Users\Ryzen\Desktop\Git_repos\Chess_cpp\x64\Debug\Chess.exe

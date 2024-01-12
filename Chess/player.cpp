@@ -1,47 +1,48 @@
 #include "Player.h"
 #include "functions.h"
 
-int Player::turnCounter = -1;
 
 Player::Player()
 {
-	if (turnCounter == 1 or turnCounter == -1)
-	{
-		turnCounter = 0;
-		currentSign = ' ';
-	}
-	else
-	{
-		turnCounter = 1;
-		currentSign = '-';
-	}
+	int white = 0;
+	turnGuard = white;
 }
 
 Player::~Player()
 {
 }
 
-int Player::getTurnCounter()
-{
-	return turnCounter;
-}
-
-pair<char, int> setStartPosition()
+pair<char, int> Player::getStartPosition()
 {
 	cout << "\nType in coordinate of your piece, which you're going to do a move"
 		<< " (for example: D2) ";
-	pair<char, int> checkCoords;
+	pair<char, int> checkPosition;
 	char sign;
 	do
 	{
-		checkCoords = getPosition();
-		sign = getSign(checkCoords);
-	} while (checkCoords.second != 0 and sign);
+		checkPosition = getPosition();
+	}while (not (checkPosition.second != 0) or not validationSign(checkPosition));
 
-	return checkCoords;
+	return checkPosition;
 }
 
-bool validationSign(pair<char, int> coords)
+void Player::changeTurn()
+{
+	int white = 0, black = 1;
+
+	if (turnGuard == 1 or turnGuard == -1)
+	{
+		turnGuard = white;
+		currentSign = ' ';
+	}
+	else
+	{
+		turnGuard = black;
+		currentSign = '-';
+	}
+}
+
+bool Player::validationSign(pair<char, int> coords)
 {
 	int rowIndex = 10 - coords.second;
 	int columnIndex = 4 + (coords.first - int('A')) * 3;
@@ -51,7 +52,10 @@ bool validationSign(pair<char, int> coords)
 	if (board[rowIndex][signColumnIndex] == currentSign)
 		return true;
 	else
+	{
+		cout << "\nYour answer is wrong, please correct it: ";
 		return false;
+	}
 }
 
 bool Player::returnCheck()

@@ -6,9 +6,6 @@
 
 #include "functions.h"
 #include "Player.h"
-#include "White.h"
-#include "Black.h"
-
 
 #include "BishopPiece.h"
 #include "QueenPiece.h"
@@ -37,7 +34,7 @@ public:
 
 	void showRules();
 	void setPiece(pair<char, int> coordinates);
-	pair<char,int> getBoardContent();
+	int getPieceValue();
 	Piece* getPiece(int value);
 	void move(pair<char, int> finalPosition);
 
