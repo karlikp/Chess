@@ -6,6 +6,11 @@
 #include "functions.h"
 
 char Background::tempSign = {};
+int Background::pieceValue = {};
+int Background::startRowIndex = {};
+int Background::startColumnIndex = {};
+int Background::startSignColumnIndex = {};
+
 vector <string> Background::board = {};
 
 vector<string> Background::getBoard()

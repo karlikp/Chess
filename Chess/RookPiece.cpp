@@ -9,10 +9,8 @@ RookPiece::~RookPiece()
 {
 }
 
-vector<pair<char, int>> RookPiece::getScope(pair<char, int> startPosition)
+void RookPiece::getScope(pair<char, int> startPosition)
 {
-	vector<pair<char, int>> tempMoveScope;
-
 	vector<pair<int, int>> rookStep = { {1,0}, {0,-1}, {-1,0}, {0,1} };
 
 	
@@ -30,7 +28,7 @@ vector<pair<char, int>> RookPiece::getScope(pair<char, int> startPosition)
 			if (lackYourPiece(letter, number)
 				and positionIncludeInBoard(letter, number))
 			{
-				tempMoveScope.push_back({ letter, number });
+				moveScope.push_back({ letter, number });
 			}
 
 			if (occupiedPosition(letter, number)
@@ -38,8 +36,7 @@ vector<pair<char, int>> RookPiece::getScope(pair<char, int> startPosition)
 				break;
 		}
 	}
-	showAccessPositions(tempMoveScope);
-	return tempMoveScope;
+	showAccessPositions(moveScope);
 }
 
 bool RookPiece::checkMoveAccess(pair<char, int> finishPosition)

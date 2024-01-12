@@ -8,16 +8,17 @@ using namespace std;
 class Piece
 {
 	vector <string> board;
-	vector<pair<char, int>> moveScope;
 	int numberCoord;
 	char letterCoord;
 
-
 public:
+
+	vector<pair<char, int>> moveScope;
+
 	Piece();
 	~Piece();
 	//void insertMoveScope(vector<pair<char, int>> tempMoveScope);
-	virtual vector<pair<char, int>> getScope(pair<char, int> startPosition) = 0;
+	virtual void getScope(pair<char, int> startPosition) = 0;
 
 	pair<char, int> getFinalPosition();
 	bool moveValidation();

@@ -23,7 +23,7 @@ class Background
 	vector <string> rules;
 	static vector <string> board;
 	
-	int pieceValue, startRowIndex, startColumnIndex, startSignColumnIndex;
+	static int pieceValue, startRowIndex, startColumnIndex, startSignColumnIndex;
 	/*int turnCounter = 0*/;
 	
 public:
@@ -33,14 +33,15 @@ public:
 	void showBoard();
 
 	void showRules();
-	void setPiece(pair<char, int> coordinates);
-	int getPieceValue();
+	static void setPiece(pair<char, int> position);
+	static int getPieceValue();
 	Piece* getPiece(int value);
 	void move(pair<char, int> finalPosition);
 
 	friend bool Piece::lackYourPiece(char letter, int number);
 	friend bool occupiedPosition(char letter, int number);
 	friend bool Player::validationSign(pair<char, int> coords);
+	friend pair<char, int> Player::getStartPosition();
 
 	
 };

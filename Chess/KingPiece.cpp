@@ -9,10 +9,8 @@ KingPiece::~KingPiece()
 {
 }
 
-vector<pair<char, int>> KingPiece::getScope(pair<char, int> startPosition)
+void KingPiece::getScope(pair<char, int> startPosition)
 {
-	vector<pair<char, int>> tempMoveScope;
-
 	vector<pair<int, int>> kingStep = { {1,0}, {1,-1}, {0,-1}, {-1,-1}, {-1,0}, {-1,1}, {0,1}, {1,1} };
 
 	for (int i = 0; i < 8; i++)
@@ -22,10 +20,9 @@ vector<pair<char, int>> KingPiece::getScope(pair<char, int> startPosition)
 
 		if (lackYourPiece(letter, number)
 			and positionIncludeInBoard(letter, number))
-			tempMoveScope.push_back({ letter,number });
+			moveScope.push_back({ letter,number });
 	}
-	showAccessPositions(tempMoveScope);
-	return tempMoveScope;
+	showAccessPositions(moveScope);
 }
 
 bool KingPiece::checkMoveAccess(pair<char, int> finishPosition)

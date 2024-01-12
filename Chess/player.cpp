@@ -17,11 +17,18 @@ pair<char, int> Player::getStartPosition()
 	cout << "\nType in coordinate of your piece, which you're going to do a move"
 		<< " (for example: D2) ";
 	pair<char, int> checkPosition;
-	char sign;
+	int pieceValue;
+	int counterAskAnswer = 0;
 	do
 	{
+		counterAskAnswer++;
+		if (counterAskAnswer > 1)
+			cout << "\nYour choice is impossible, type in access position: ";
 		checkPosition = getPosition();
-	}while (not (checkPosition.second != 0) or not validationSign(checkPosition));
+		Background::setPiece(checkPosition);
+		pieceValue = Background::getPieceValue();
+
+	}while (not (pieceValue != 0) or not validationSign(checkPosition));
 
 	return checkPosition;
 }

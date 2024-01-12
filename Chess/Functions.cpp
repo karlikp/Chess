@@ -107,3 +107,16 @@ void showAccessPositions(vector<pair<char, int>> pieceScope)
 	}
 }
 
+//pair<char, int> containPosition(pair<char, int> position)
+//{
+//	int startRowIndex = 10 - position.second;
+//	int startColumnIndex = 4 + (position.first - int('A')) * 3;
+//	int startSignColumnIndex = startColumnIndex - 1;
+//	vector<string> board = Background::getBoard();
+//
+//	char sign = board[startRowIndex][startSignColumnIndex];
+//	int pieceValue = board[startRowIndex][startColumnIndex] - int('0');
+//
+//	return { sign, pieceValue };
+//}
+

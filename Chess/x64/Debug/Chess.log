@@ -1,6 +1,13 @@
-﻿  functions.cpp
+﻿  Background.cpp
+  BishopPiece.cpp
+  functions.cpp
+  KingPiece.cpp
+  KnightPiece.cpp
+  Main.cpp
+  PawnPiece.cpp
   Piece.cpp
   Player.cpp
-C:\Users\Ryzen\Desktop\Git_repos\Chess_cpp\Chess\Player.cpp(20,7): warning C4101: 'sign': unreferenced local variable
+  QueenPiece.cpp
+  RookPiece.cpp
   Generating Code...
   Chess.vcxproj -> C:\Users\Ryzen\Desktop\Git_repos\Chess_cpp\x64\Debug\Chess.exe

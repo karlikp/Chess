@@ -9,10 +9,8 @@ QueenPiece::~QueenPiece()
 {
 }
 
-vector<pair<char, int>> QueenPiece::getScope(pair<char, int> startPosition)
+void QueenPiece::getScope(pair<char, int> startPosition)
 {
-	vector<pair<char, int>> tempMoveScope;
-
 	vector<pair<int, int>> bishopStep = { {1,1}, {1,-1}, {-1,-1}, {-1,1} };
 
 	for (int i = 0; i < 4; i++)
@@ -29,7 +27,7 @@ vector<pair<char, int>> QueenPiece::getScope(pair<char, int> startPosition)
 			if (lackYourPiece(letter, number)
 				and positionIncludeInBoard(letter, number))
 			{
-				tempMoveScope.push_back({ letter, number });
+				moveScope.push_back({ letter, number });
 			}
 
 			if (occupiedPosition(letter, number))
@@ -52,7 +50,7 @@ vector<pair<char, int>> QueenPiece::getScope(pair<char, int> startPosition)
 				if (lackYourPiece(letter, number)
 					and positionIncludeInBoard(letter, number))
 				{
-					tempMoveScope.push_back({ letter, number });
+					moveScope.push_back({ letter, number });
 				}
 
 				if (occupiedPosition(letter, number)
@@ -61,8 +59,7 @@ vector<pair<char, int>> QueenPiece::getScope(pair<char, int> startPosition)
 			}
 		}
 	}
-	showAccessPositions(tempMoveScope);
-	return tempMoveScope;
+	showAccessPositions(moveScope);
 }
 
 bool QueenPiece::checkMoveAccess(pair<char, int> finishPosition)

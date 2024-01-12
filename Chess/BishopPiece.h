@@ -8,7 +8,7 @@ public:
 
 	BishopPiece();
 	~BishopPiece();
-	virtual vector<pair<char, int>> getScope(pair<char, int> startPosition);
+	virtual void getScope(pair<char, int> startPosition);
 	virtual bool checkMoveAccess(pair<char, int> finishPosition);
 	
 };

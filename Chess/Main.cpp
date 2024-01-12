@@ -25,13 +25,14 @@ int main()
 		{
 			startPosition = person.getStartPosition();
 
-			currentPiece = chessGround.getPiece(startPosition.second);
+			chessGround.setPiece(startPosition);
+
+			currentPiece = chessGround.getPiece(chessGround.getPieceValue());
 
 			currentPiece->getScope(startPosition);
 
 		} while (currentPiece->checkEmptinessScope());
 
-			chessGround.setPiece(startPosition);
 
 			
 

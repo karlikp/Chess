@@ -13,10 +13,8 @@ KnightPiece::~KnightPiece()
 {
 }
 
-vector<pair<char, int>> KnightPiece::getScope(pair<char, int> startPosition)
+void KnightPiece::getScope(pair<char, int> startPosition)
 {
-	vector<pair<char, int>> tempMoveScope;
-
 	vector<pair<int, int>> knightStep
 	{ {2,1}, {1,2}, {-1,2}, {-2,1}, {-2,-1}, {-1,-2}, {1,-2}, {2,-1} };
 
@@ -30,10 +28,9 @@ vector<pair<char, int>> KnightPiece::getScope(pair<char, int> startPosition)
 		
 		if (lackYourPiece(letter, number)
 			and positionIncludeInBoard(letter, number))
-			tempMoveScope.push_back({ letter, number });
+			moveScope.push_back({ letter, number });
 	}
-	showAccessPositions(tempMoveScope);
-	return tempMoveScope;
+	showAccessPositions(moveScope);
 }
 
 bool KnightPiece::checkMoveAccess(pair<char, int> finishPosition)
