@@ -1,13 +1,2 @@
-﻿  Background.cpp
-  BishopPiece.cpp
-  functions.cpp
-  KingPiece.cpp
-  KnightPiece.cpp
-  Main.cpp
-  PawnPiece.cpp
-  Piece.cpp
-  Player.cpp
-  QueenPiece.cpp
-  RookPiece.cpp
-  Generating Code...
+﻿  Piece.cpp
   Chess.vcxproj -> C:\Users\Ryzen\Desktop\Git_repos\Chess_cpp\x64\Debug\Chess.exe

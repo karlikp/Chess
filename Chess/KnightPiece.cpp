@@ -28,9 +28,10 @@ void KnightPiece::getScope(pair<char, int> startPosition)
 		
 		if (lackYourPiece(letter, number)
 			and positionIncludeInBoard(letter, number))
-			moveScope.push_back({ letter, number });
+			currentMoveScope.push_back({ letter, number });
 	}
-	showAccessPositions(moveScope);
+	if (not currentMoveScope.empty())
+		showAccessPositions(currentMoveScope);
 }
 
 bool KnightPiece::checkMoveAccess(pair<char, int> finishPosition)

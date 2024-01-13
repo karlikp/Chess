@@ -1,3 +1,5 @@
+[Introduction]
+
 You are welcome in chess program.
 This program let you play in chess and it'll care agreement with the chess rules.
 

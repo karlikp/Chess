@@ -6,6 +6,7 @@
 #include <cctype>
 
 #include "functions.h"
+#include "Background.h"
 
 using namespace std;
 
@@ -39,8 +40,10 @@ pair<char, int> getPosition()
 	{
 		char letter;
 		string coordinates;
-
-		getline(cin, coordinates);
+		do
+		{
+			getline(cin, coordinates);
+		} while (coordinates == "");
 		letter = coordinates[0];
 		number = int(coordinates[1] - '0');
 
@@ -59,13 +62,13 @@ pair<char, int> getPosition()
 
 bool boardValidation(char letter, int number)
 {
-	bool correct = positionIncludeInBoard(letter,number);
-	
-	if (not correct)
+	if (not positionIncludeInBoard(letter, number))
 	{
-		cout << "\nYour answer is wrong, please correct it: ";
+		cout << "\nYour answer is incorrect, please type in piece position "
+			"according to the instructions: ";
+		return false;
 	}
-	return correct;
+	return true;
 }
 
 bool positionIncludeInBoard(char letter, int number)
@@ -106,17 +109,4 @@ void showAccessPositions(vector<pair<char, int>> pieceScope)
 		cout << "[" << i.first << "," << i.second << "]";
 	}
 }
-
-//pair<char, int> containPosition(pair<char, int> position)
-//{
-//	int startRowIndex = 10 - position.second;
-//	int startColumnIndex = 4 + (position.first - int('A')) * 3;
-//	int startSignColumnIndex = startColumnIndex - 1;
-//	vector<string> board = Background::getBoard();
-//
-//	char sign = board[startRowIndex][startSignColumnIndex];
-//	int pieceValue = board[startRowIndex][startColumnIndex] - int('0');
-//
-//	return { sign, pieceValue };
-//}
 

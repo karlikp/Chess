@@ -28,7 +28,7 @@ void RookPiece::getScope(pair<char, int> startPosition)
 			if (lackYourPiece(letter, number)
 				and positionIncludeInBoard(letter, number))
 			{
-				moveScope.push_back({ letter, number });
+				currentMoveScope.push_back({ letter, number });
 			}
 
 			if (occupiedPosition(letter, number)
@@ -36,7 +36,8 @@ void RookPiece::getScope(pair<char, int> startPosition)
 				break;
 		}
 	}
-	showAccessPositions(moveScope);
+	if (not currentMoveScope.empty())
+		showAccessPositions(currentMoveScope);
 }
 
 bool RookPiece::checkMoveAccess(pair<char, int> finishPosition)

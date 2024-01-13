@@ -1,30 +1,28 @@
 #include "Piece.h"
 #include "Background.h"
+#include "functions.h"
+#include "Player.h"
+
+vector<pair<char, int>> Piece::currentMoveScope;
 
 Piece::Piece()
 {
+	board = Background::getBoard();
 }
 
 Piece::~Piece()
 {
 }
 
-//void Piece::insertMoveScope(vector <pair<char, int>> tempMoveScope)
-//{
-//	moveScope = tempMoveScope;
-//}
-
-
 bool Piece::lackYourPiece(char letter, int number)
 {
 	bool lackOwnPiece = true;
-	board = Background::getBoard();
-
+	
 	int rowIndex = 10 - number;
 	int columnIndex = 4 + (letter - 'A') * 3;
 	int signColumnIndex = columnIndex - 1;
 
-	if (board[rowIndex][signColumnIndex] == Background::tempSign and
+	if (board[rowIndex][signColumnIndex] == Player::getCurrentSign() and
 		board[rowIndex][columnIndex] != '0')
 		lackOwnPiece = false;
 
@@ -42,14 +40,14 @@ bool Piece::moveValidation()
 
 bool Piece::scopeValidation()
 {
-	for (auto coords : moveScope)
+	for (auto coords : currentMoveScope)
 	{
 		if (coords.first == letterCoord and coords.second == numberCoord)
 		{
 			return true;
 		}
 	}
-	cout << "\n The position isn't access. Type in coorect move position: ";
+	cout << "\n The position isn't access. Type in correct move position: ";
 	return false;
 }
 
@@ -83,5 +81,10 @@ pair<char, int> Piece::getFinalPosition()
 
 bool Piece::checkEmptinessScope()
 {
-	return moveScope.empty();
+	if (currentMoveScope.empty())
+	{
+		cout << "\nThis piece cannot move, choose another one.";
+		return true;
+	}
+	return false;
 }

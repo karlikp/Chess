@@ -4,8 +4,6 @@
 #include <vector>
 #include <string>
 
-#include "Background.h"
-#include "Player.h"
 
 using namespace std;
 
@@ -22,6 +20,8 @@ bool positionIncludeInBoard(char letter, int number);
 bool occupiedPosition(char letter, int number);
 
 void showAccessPositions(vector<pair<char, int>>pieceScope);
+
+void initCheckValidation();
 
 
 

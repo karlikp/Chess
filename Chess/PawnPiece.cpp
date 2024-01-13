@@ -1,5 +1,5 @@
 #include "PawnPiece.h"
-#include "Background.h"
+#include "functions.h"
 
 PawnPiece::PawnPiece(vector<string> table)
 {
@@ -29,25 +29,26 @@ void PawnPiece::getScope(pair<char, int> startPosition)
 	if (singleStepAccess and sign == '-'
 		and positionIncludeInBoard(letter, number - 1))
 	{
-		moveScope.push_back({ letter, number - 1 });
+		currentMoveScope.push_back({ letter, number - 1 });
 
 		if (number == 7 and doubleStepAccess
 			and positionIncludeInBoard(letter, number - 2))
-			moveScope.push_back({ letter, number - 2 });
+			currentMoveScope.push_back({ letter, number - 2 });
 	}
 	else if (singleStepAccess and sign == ' '
 		and positionIncludeInBoard(letter, number + 1))
 	{
-		moveScope.push_back({letter, number + 1 });
+		currentMoveScope.push_back({letter, number + 1 });
 
 		if (number == 2 and doubleStepAccess 
 			and positionIncludeInBoard(letter, number + 2))
-			moveScope.push_back({letter, number + 2});
+			currentMoveScope.push_back({letter, number + 2});
 	}
 
 	checkAttackScope();
 	
-	showAccessPositions(moveScope);
+	if (not currentMoveScope.empty())
+		showAccessPositions(currentMoveScope);
 }
 
 bool PawnPiece::checkMoveAccess(pair<char, int> finishPosition)
@@ -87,13 +88,13 @@ void PawnPiece::checkAttackScope()
 			and lackYourPiece(char(int(letter) - 1), number - 1)
 			and positionIncludeInBoard(char(int(letter) - 1), number - 1))
 		{
-			moveScope.push_back({ char(int(letter) - 1), number - 1 });
+			currentMoveScope.push_back({ char(int(letter) - 1), number - 1 });
 		}
 		if (occupiedPosition(char(int(letter) + 1), number - 1)
 			and lackYourPiece(char(int(letter) + 1), number - 1)
 			and positionIncludeInBoard(char(int(letter) + 1), number - 1))
 		{
-			moveScope.push_back({ char(int(letter) + 1), number - 1 });
+			currentMoveScope.push_back({ char(int(letter) + 1), number - 1 });
 		}
 	}
 	else
@@ -102,13 +103,13 @@ void PawnPiece::checkAttackScope()
 			and lackYourPiece(char(int(letter) - 1), number + 1)
 			and positionIncludeInBoard(char(int(letter) - 1), number + 1))
 		{
-			moveScope.push_back({ char(int(letter) - 1), number + 1 });
+			currentMoveScope.push_back({ char(int(letter) - 1), number + 1 });
 		}
 		if (occupiedPosition(char(int(letter) + 1), number + 1)
 			and lackYourPiece(char(int(letter) + 1), number + 1)
 			and positionIncludeInBoard(char(int(letter) + 1), number + 1))
 		{
-			moveScope.push_back({ char(int(letter) + 1), number + 1 });
+			currentMoveScope.push_back({ char(int(letter) + 1), number + 1 });
 		}
 	}
 }

@@ -4,6 +4,7 @@
 
 #include "functions.h"
 #include "Background.h"
+#include "CheckValidation.h"
 #include "Piece.h"
 
 using namespace std;
@@ -11,38 +12,37 @@ using namespace std;
 int main()
 {
 
-
-	Background chessGround;
+	Background* chessGround = new Background;
+	
+	CheckValidation validation(chessGround);
 	Player person;
 
 	bool finish = false;
 	do
 	{
-		chessGround.showBoard();
+		person.announcementTurn();
+		chessGround->showBoard();
 		pair<char, int> startPosition;
 		Piece* currentPiece;
 		do
 		{
 			startPosition = person.getStartPosition();
 
-			chessGround.setPiece(startPosition);
+			chessGround->setPiece(startPosition);
 
-			currentPiece = chessGround.getPiece(chessGround.getPieceValue());
+			currentPiece = chessGround->getPiece(chessGround->getPieceValue());
 
 			currentPiece->getScope(startPosition);
 
 		} while (currentPiece->checkEmptinessScope());
 
-
-			
-
-	//		currentPiece->insertMoveScope(currentPiece->getScope(startPosition));
-		
-		
 		pair<char, int> finalPosition = currentPiece->getFinalPosition();
 
 		if (currentPiece->moveValidation())
-			chessGround.move(finalPosition);
+			validation.changeKingPosition(finalPosition);
+			chessGround->move(finalPosition);
+
+		validation.checkControl();
 
 
 
@@ -52,5 +52,8 @@ int main()
 	person.changeTurn();
 
 	} while (!finish);
+
+	delete chessGround;
+
 }
 	

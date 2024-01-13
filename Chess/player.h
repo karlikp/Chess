@@ -3,28 +3,32 @@
 #include <iostream>
 #include <vector>
 
+#include "Piece.h"
+
+
 using namespace std;
 
 class Player
 {
-	bool check = false; //I needn't know which king is checking, so te variable should be in base class
-	int turnGuard;
-	char currentSign = ' ';
-	pair<char, int> blackKing{ 'E', 1 }, whiteKing{ 'A', 1 };
-
 	
+	static int turnGuard;
+	int white, black;
+	static char currentSign;
 
 public:
 
 	Player();
 	~Player();
-;
+	static char getCurrentSign();
 	pair<char, int> getStartPosition();
-	bool validationSign(pair<char, int> coords);
+	static int getTurnGuard();
 	void changeTurn();
-
-	bool returnCheck();
+	void announcementTurn();
 	void finish();
+	bool validationSign(pair<char, int> coords);
 
+	friend bool Piece::lackYourPiece(char letter, int number);
+	friend class CheckValidation;
+	
 };
 

@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="Background.cpp" />
     <ClCompile Include="BishopPiece.cpp" />
+    <ClCompile Include="CheckValidation.cpp" />
     <ClCompile Include="functions.cpp" />
     <ClCompile Include="KingPiece.cpp" />
     <ClCompile Include="KnightPiece.cpp" />
@@ -142,6 +143,7 @@
   <ItemGroup>
     <ClInclude Include="Background.h" />
     <ClInclude Include="BishopPiece.h" />
+    <ClInclude Include="CheckValidation.h" />
     <ClInclude Include="functions.h" />
     <ClInclude Include="QueenPiece.h" />
     <ClInclude Include="KingPiece.h" />

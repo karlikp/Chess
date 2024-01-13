@@ -1,21 +1,29 @@
 #include "Player.h"
 #include "functions.h"
+#include "Background.h"
 
+char Player::currentSign = ' ';
+int Player::turnGuard = 0;
 
 Player::Player()
 {
-	int white = 0;
-	turnGuard = white;
+	white = 0;
+	black = 1;
 }
 
 Player::~Player()
 {
 }
 
+char Player::getCurrentSign()
+{
+	return currentSign;
+}
+
 pair<char, int> Player::getStartPosition()
 {
-	cout << "\nType in coordinate of your piece, which you're going to do a move"
-		<< " (for example: D2) ";
+	cout << "\nWhich piece would you like to move with?"
+			"\nType in coordinates the piece : ";
 	pair<char, int> checkPosition;
 	int pieceValue;
 	int counterAskAnswer = 0;
@@ -23,7 +31,11 @@ pair<char, int> Player::getStartPosition()
 	{
 		counterAskAnswer++;
 		if (counterAskAnswer > 1)
-			cout << "\nYour choice is impossible, type in access position: ";
+			cout << "\nThe position which you selected doesn't contain your chess piece."
+			"\nSelect the field containing the correct coloured piece"
+			" as instructed in the initial rules."
+			"\nWhich piece would you like to move with?"
+			"\nType in coordinates the piece : ";
 		checkPosition = getPosition();
 		Background::setPiece(checkPosition);
 		pieceValue = Background::getPieceValue();
@@ -33,11 +45,14 @@ pair<char, int> Player::getStartPosition()
 	return checkPosition;
 }
 
+int Player::getTurnGuard()
+{
+	return turnGuard;
+}
+
 void Player::changeTurn()
 {
-	int white = 0, black = 1;
-
-	if (turnGuard == 1 or turnGuard == -1)
+	if (turnGuard == black or turnGuard == -1)
 	{
 		turnGuard = white;
 		currentSign = ' ';
@@ -47,6 +62,18 @@ void Player::changeTurn()
 		turnGuard = black;
 		currentSign = '-';
 	}
+}
+
+void Player::finish()
+{
+}
+
+void Player::announcementTurn()
+{
+	if (turnGuard == 0)
+		cout << "\n[White player turn]\n\n";
+	else
+		cout << "\n[Black player turn]\n\n";
 }
 
 bool Player::validationSign(pair<char, int> coords)
@@ -60,12 +87,8 @@ bool Player::validationSign(pair<char, int> coords)
 		return true;
 	else
 	{
-		cout << "\nYour answer is wrong, please correct it: ";
 		return false;
 	}
 }
 
-bool Player::returnCheck()
-{
-	return check;
-}
+

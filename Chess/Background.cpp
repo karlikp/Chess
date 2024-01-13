@@ -5,6 +5,13 @@
 #include "Background.h"
 #include "functions.h"
 
+#include "BishopPiece.h"
+#include "QueenPiece.h"
+#include "KingPiece.h"
+#include "KnightPiece.h"
+#include "PawnPiece.h"
+#include "RookPiece.h"
+
 char Background::tempSign = {};
 int Background::pieceValue = {};
 int Background::startRowIndex = {};
@@ -22,10 +29,10 @@ Background::Background()
 {
 	vector <string> intro = readStringsFromFile("introduction.txt");
 	coutStringVector(intro);
-	board = readStringsFromFile("chessBoard.txt");
-	//coutStringVector(board);
-	rules = readStringsFromFile("rules.txt");
+	rules = readStringsFromFile("instruction.txt");
 	coutStringVector(rules);
+	cout << "[Start the game]";
+	board = readStringsFromFile("chessBoard.txt");
 }
 
 void Background::showBoard()

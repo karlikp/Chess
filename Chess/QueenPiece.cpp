@@ -27,7 +27,7 @@ void QueenPiece::getScope(pair<char, int> startPosition)
 			if (lackYourPiece(letter, number)
 				and positionIncludeInBoard(letter, number))
 			{
-				moveScope.push_back({ letter, number });
+				currentMoveScope.push_back({ letter, number });
 			}
 
 			if (occupiedPosition(letter, number))
@@ -50,7 +50,7 @@ void QueenPiece::getScope(pair<char, int> startPosition)
 				if (lackYourPiece(letter, number)
 					and positionIncludeInBoard(letter, number))
 				{
-					moveScope.push_back({ letter, number });
+					currentMoveScope.push_back({ letter, number });
 				}
 
 				if (occupiedPosition(letter, number)
@@ -59,7 +59,8 @@ void QueenPiece::getScope(pair<char, int> startPosition)
 			}
 		}
 	}
-	showAccessPositions(moveScope);
+	if (not currentMoveScope.empty())
+		showAccessPositions(currentMoveScope);
 }
 
 bool QueenPiece::checkMoveAccess(pair<char, int> finishPosition)

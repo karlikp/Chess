@@ -4,16 +4,7 @@
 #include <vector>
 #include <string>
 
-#include "functions.h"
 #include "Player.h"
-
-#include "BishopPiece.h"
-#include "QueenPiece.h"
-#include "KingPiece.h"
-#include "KnightPiece.h"
-#include "PawnPiece.h"
-#include "RookPiece.h"
-
 
 using namespace std;
 
@@ -42,7 +33,7 @@ public:
 	friend bool occupiedPosition(char letter, int number);
 	friend bool Player::validationSign(pair<char, int> coords);
 	friend pair<char, int> Player::getStartPosition();
-
+	friend class CheckValidation;
 	
 };
 
