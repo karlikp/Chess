@@ -20,10 +20,8 @@ void KingPiece::getScope(pair<char, int> startPosition)
 
 		if (lackYourPiece(letter, number)
 			and positionIncludeInBoard(letter, number))
-			currentMoveScope.push_back({ letter,number });
+			currentMoveScope.insert({ letter,number });
 	}
-	if (not currentMoveScope.empty())
-		showAccessPositions(currentMoveScope);
 }
 
 bool KingPiece::checkMoveAccess(pair<char, int> finishPosition)

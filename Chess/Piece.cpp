@@ -3,7 +3,7 @@
 #include "functions.h"
 #include "Player.h"
 
-vector<pair<char, int>> Piece::currentMoveScope;
+set<pair<char, int>> Piece::currentMoveScope;
 
 Piece::Piece()
 {
@@ -12,6 +12,7 @@ Piece::Piece()
 
 Piece::~Piece()
 {
+	currentMoveScope.clear();
 }
 
 bool Piece::lackYourPiece(char letter, int number)
@@ -30,14 +31,6 @@ bool Piece::lackYourPiece(char letter, int number)
 }
 
 
-bool Piece::moveValidation()
-{
-	if (scopeValidation() and lackCheck())
-		return true;
-	else
-		return false;
-}
-
 bool Piece::scopeValidation()
 {
 	for (auto coords : currentMoveScope)
@@ -51,18 +44,6 @@ bool Piece::scopeValidation()
 	return false;
 }
 
-bool Piece::lackCheck()
-{
-	
-	int rowIndex = 10 - numberCoord;
-	int columnIndex = 4 + (letterCoord - 'A') * 3;
-	
-	if (board[rowIndex][columnIndex] != '6')
-		return true;
-	else
-		return false;
-
-}
 
 pair<char, int> Piece::getFinalPosition()
 {

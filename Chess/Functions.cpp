@@ -8,6 +8,7 @@
 #include "functions.h"
 #include "Background.h"
 
+
 using namespace std;
 
 vector<string>readStringsFromFile(string file_name)
@@ -100,13 +101,17 @@ bool occupiedPosition(char letter, int number)
 	return occupied;
 }
 
-void showAccessPositions(vector<pair<char, int>> pieceScope)
+void showAccessPositions()
 {
+	set<pair<char, int>>* pieceScope;
+	pieceScope = &Piece::currentMoveScope;
 	cout << "\nAccess move position for your piece: ";
 
-	for (auto i : pieceScope)
+	for (auto i : *pieceScope)
 	{
 		cout << "[" << i.first << "," << i.second << "]";
 	}
 }
+
+
 

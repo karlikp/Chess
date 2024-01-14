@@ -13,10 +13,10 @@
 #include "RookPiece.h"
 
 char Background::tempSign = {};
-int Background::pieceValue = {};
-int Background::startRowIndex = {};
-int Background::startColumnIndex = {};
-int Background::startSignColumnIndex = {};
+int Background::tempPieceValue = {};
+int Background::tempRowIndex = {};
+int Background::tempColumnIndex = {};
+int Background::tempSignColumnIndex = {};
 
 vector <string> Background::board = {};
 
@@ -45,20 +45,20 @@ void Background::showRules()
 	coutStringVector(rules);
 }
 
-void Background::setPiece(pair<char, int> coordinates)
+void Background::setContainOfPosition(pair<char, int> coordinates)
 {
-	startRowIndex = 10 - coordinates.second;
-	startColumnIndex = 4 + (coordinates.first - int('A')) * 3;
-	startSignColumnIndex = startColumnIndex - 1;
+	tempRowIndex = 10 - coordinates.second;
+	tempColumnIndex = 4 + (coordinates.first - int('A')) * 3;
+	tempSignColumnIndex = tempColumnIndex - 1;
 
-	tempSign = board[startRowIndex][startSignColumnIndex];
-	pieceValue = board[startRowIndex][startColumnIndex] - int('0');
+	tempSign = board[tempRowIndex][tempSignColumnIndex];
+	tempPieceValue = board[tempRowIndex][tempColumnIndex] - int('0');
 
 }
 
 int Background::getPieceValue()
 {
-	return pieceValue;
+	return tempPieceValue;
 }
 
 Piece* Background::getPiece(int pieceValue)
@@ -97,11 +97,11 @@ void Background::move(pair<char, int> finalPosition)
 	int columnIndex = 4 + (letterCoord - int('A')) * 3;
 	int signColumnIndex = columnIndex - 1;
 
-	board[rowIndex][columnIndex] = char(pieceValue + int('0'));
+	board[rowIndex][columnIndex] = char(tempPieceValue + int('0'));
 	board[rowIndex][signColumnIndex] = tempSign;
 
-	board[startRowIndex][startColumnIndex] = '0';
-	board[startRowIndex][startSignColumnIndex] = ' ';
+	board[tempRowIndex][tempColumnIndex] = '0';
+	board[tempRowIndex][tempSignColumnIndex] = ' ';
 }
 
 

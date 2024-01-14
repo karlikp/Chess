@@ -20,6 +20,11 @@ char Player::getCurrentSign()
 	return currentSign;
 }
 
+void Player::setCurrentSign(char sign)
+{
+	currentSign = sign;
+}
+
 pair<char, int> Player::getStartPosition()
 {
 	cout << "\nWhich piece would you like to move with?"
@@ -37,7 +42,7 @@ pair<char, int> Player::getStartPosition()
 			"\nWhich piece would you like to move with?"
 			"\nType in coordinates the piece : ";
 		checkPosition = getPosition();
-		Background::setPiece(checkPosition);
+		Background::setContainOfPosition(checkPosition);
 		pieceValue = Background::getPieceValue();
 
 	}while (not (pieceValue != 0) or not validationSign(checkPosition));
@@ -89,6 +94,14 @@ bool Player::validationSign(pair<char, int> coords)
 	{
 		return false;
 	}
+}
+
+void Player::end()
+{
+	if (turnGuard == 1)
+		cout << "\n[Checkmate, congratulates the white player on his victory]";
+	else
+		cout << "\n[Checkmate, congratulates the white player on his victory]";
 }
 
 

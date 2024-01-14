@@ -28,7 +28,7 @@ void BishopPiece::getScope(pair<char, int> startPosition)
 				if (lackYourPiece(letter, number)
 					and positionIncludeInBoard(letter, number))
 				{
-					currentMoveScope.push_back({ letter, number });
+					currentMoveScope.insert({ letter, number });
 				}
 
 				if (occupiedPosition(letter, number))
@@ -36,8 +36,6 @@ void BishopPiece::getScope(pair<char, int> startPosition)
 			}
 		}
 	}
-	if(not currentMoveScope.empty())
-		showAccessPositions(currentMoveScope);
 }
 
 bool BishopPiece::checkMoveAccess(pair<char, int> finishPosition)

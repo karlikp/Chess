@@ -13,47 +13,58 @@ int main()
 {
 
 	Background* chessGround = new Background;
-	
-	CheckValidation validation(chessGround);
 	Player person;
-
+	CheckValidation validation(chessGround);
+	validation.initialValidationScope();
 	bool finish = false;
 	do
 	{
 		person.announcementTurn();
 		chessGround->showBoard();
+		
 		pair<char, int> startPosition;
 		Piece* currentPiece;
 		do
 		{
 			startPosition = person.getStartPosition();
 
-			chessGround->setPiece(startPosition);
+			chessGround->setContainOfPosition(startPosition);
 
 			currentPiece = chessGround->getPiece(chessGround->getPieceValue());
 
 			currentPiece->getScope(startPosition);
 
+			showAccessPositions();
+			
 		} while (currentPiece->checkEmptinessScope());
-
+		
 		pair<char, int> finalPosition = currentPiece->getFinalPosition();
+		
+		delete currentPiece;
+		chessGround->move(finalPosition);
 
-		if (currentPiece->moveValidation())
-			validation.changeKingPosition(finalPosition);
-			chessGround->move(finalPosition);
+		chessGround->setContainOfPosition(finalPosition);
+		validation.updateTurnGuard();
+		validation.movePieceForScope(startPosition, finalPosition);
 
+		validation.completePiecesScope();
+		validation.createScopeSetForAll();
+		validation.showSets();
+
+		chessGround->setContainOfPosition(finalPosition);
 		validation.checkControl();
 
-
-
-		
-	delete currentPiece;
+		if (validation.getCheck())
+		{
+			validation.checkMateValidation(finalPosition);
+		}
 
 	person.changeTurn();
 
-	} while (!finish);
+	} while (not validation.getCheckMate());
+
+	person.end();
 
 	delete chessGround;
-
 }
 	
