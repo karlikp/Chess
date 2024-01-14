@@ -47,12 +47,13 @@ void CheckValidation::initialValidationScope()
 			positionWhitePiecesWithScope[{char(i + 'A'), j}] = { {'0',0} };
 			
 		}
-		positionWhitePiecesWithScope.erase(whiteKing);
+		
 		for (int j = 7; j < 9; j++)
 		{
 			positionBlackPiecesWithScope[{char(i + 'A'), j}] = { {'0',0} };
 		}
-		positionWhitePiecesWithScope.erase(blackKing);
+		positionWhitePiecesWithScope.erase(whiteKing);
+		positionBlackPiecesWithScope.erase(blackKing);
 	}
 }
 
@@ -72,12 +73,6 @@ void CheckValidation::completePiecesScope()
 			Player::setCurrentSign('-');
 			currentScope = &positionBlackPiecesWithScope;
 		}
-		cout << "\n\n";
-		for (auto it : *currentScope)
-		{
-			cout << "[" << it.first.first << it.first.second << "]";
-		}
-		cout << "\n";
 
 		for (auto position : *currentScope)
 		{
@@ -355,8 +350,4 @@ void CheckValidation::changePiecePosition
 	(*positionPiecesWithScope).erase(startPosition);
 	(*positionPiecesWithScope)[newPosition] = { newPosition };
 
-	for (auto it : *positionPiecesWithScope)
-	{
-		cout << "[" << it.first.first << it.first.second << "]";
-	}
 }

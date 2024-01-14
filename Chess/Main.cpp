@@ -49,7 +49,6 @@ int main()
 
 		validation.completePiecesScope();
 		validation.createScopeSetForAll();
-		validation.showSets();
 
 		chessGround->setContainOfPosition(finalPosition);
 		validation.checkControl();

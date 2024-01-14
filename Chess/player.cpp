@@ -69,10 +69,6 @@ void Player::changeTurn()
 	}
 }
 
-void Player::finish()
-{
-}
-
 void Player::announcementTurn()
 {
 	if (turnGuard == 0)
@@ -101,7 +97,8 @@ void Player::end()
 	if (turnGuard == 1)
 		cout << "\n[Checkmate, congratulates the white player on his victory]";
 	else
-		cout << "\n[Checkmate, congratulates the white player on his victory]";
+		cout << "\n[Checkmate, congratulates the black player on his victory]";
+	cout << "\n\n";
 }
 
 

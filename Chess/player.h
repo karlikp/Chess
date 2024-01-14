@@ -25,7 +25,6 @@ public:
 	static int getTurnGuard();
 	void changeTurn();
 	void announcementTurn();
-	void finish();
 	bool validationSign(pair<char, int> coords);
 	void end();
 
