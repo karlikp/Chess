@@ -34,7 +34,7 @@ int main()
 
 			currentPiece->getScope(startPosition);
 
-			showAccessPositions();
+			//showAccessPositions(); No because it is problematic when you validation check
 			
 		} while (currentPiece->checkEmptinessScope());
 		

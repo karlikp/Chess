@@ -10,4 +10,4 @@ I always like play in chess with my friends.
 I believe that developing this project will help me improve my programming competences.
 So I will be able to develop more ambitious programming project in future.
 
-Link to developing scretch: https://miro.com/welcomeonboard/ZkhtQ2xxU3pHVWNVUlMzSE5JRE5JZTYwMkMxQUQweDlrOUgwRnBkN0Rmd1NWd21aV2dxZjVnaHh5VzFuZ1hQNXwzMDc0NDU3MzUxNzEwMDcwNDYxfDI=?share_link_id=718810921548
+Link to the still developing sketch: https://miro.com/welcomeonboard/ZkhtQ2xxU3pHVWNVUlMzSE5JRE5JZTYwMkMxQUQweDlrOUgwRnBkN0Rmd1NWd21aV2dxZjVnaHh5VzFuZ1hQNXwzMDc0NDU3MzUxNzEwMDcwNDYxfDI=?share_link_id=718810921548
