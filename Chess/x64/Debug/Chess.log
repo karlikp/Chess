@@ -1,8 +1,2 @@
-﻿  Background.cpp
-  CheckValidation.cpp
-  Main.cpp
-  Piece.cpp
-  Player.cpp
-  functions.cpp
-  Generating Code...
+﻿  LINK : C:\Users\Ryzen\Desktop\Git_repos\Chess_cpp\x64\Debug\Chess.exe not found or not built by the last incremental link; performing full link
   Chess.vcxproj -> C:\Users\Ryzen\Desktop\Git_repos\Chess_cpp\x64\Debug\Chess.exe
