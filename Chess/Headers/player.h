@@ -18,7 +18,7 @@ class Player
 public:
 
 	Player();
-	~Player();
+	~Player() = default;
 	static char getCurrentSign();
 	static void setCurrentSign(char sign);
 	pair<char, int> getStartPosition();

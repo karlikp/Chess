@@ -1,7 +1,15 @@
-[Introduction]
 
-You are welcome in chess program.
-This program let you play in chess and it'll care agreement with the chess rules.
+*******
+*Chess*
+*******
 
-First player'll caled "white player", the player head white piece.
-Similary, second player'll caled "black player", the player head black piece.
+White pieces:		Black pieces: 
+K = king		-K = king
+Q = queen		-Q = queen
+R = rook		-R = rook
+B = bishop		-B = bishop
+H = knight		-H = knight
+P = pawn		-P = pawn
+
+The game contain traditional chess rules and conditions.
+Exception the castling rule.

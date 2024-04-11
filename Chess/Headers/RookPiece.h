@@ -6,8 +6,8 @@ class RookPiece: public Piece
 
 public:
 
-	RookPiece();
-	~RookPiece();
+	RookPiece() = default;
+	~RookPiece() = default;
 	virtual void getScope(pair<char, int> startPosition);
 	virtual bool checkMoveAccess(pair<char, int> finishPosition);
 };

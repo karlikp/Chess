@@ -1,13 +1,5 @@
-#include "BishopPiece.h"
-#include "functions.h"
-
-BishopPiece::BishopPiece()
-{
-}
-
-BishopPiece::~BishopPiece()
-{
-}
+#include "Headers/BishopPiece.h"
+#include "Headers/functions.h"
 
 void BishopPiece::getScope(pair<char, int> startPosition)
 {

@@ -5,8 +5,8 @@
 #include <utility>
 #include <cctype>
 
-#include "functions.h"
-#include "Background.h"
+#include "Headers/functions.h"
+#include "Headers/Background.h"
 
 
 using namespace std;
@@ -65,8 +65,7 @@ bool boardValidation(char letter, int number)
 {
 	if (not positionIncludeInBoard(letter, number))
 	{
-		cout << "\nYour answer is incorrect, please type in piece position "
-			"according to the instructions: ";
+		cout << "\nWrong answer! Correct it: ";
 		return false;
 	}
 	return true;
@@ -93,7 +92,7 @@ bool occupiedPosition(char letter, int number)
 	bool occupied = false;
 
 	int rowIndex = 10 - number;
-	int columnIndex = 4 + (letter - 65) * 3;
+	int columnIndex = 4 + (letter - int('A')) * 3;
 	vector <string> board = Background::getBoard();
 	if (board[rowIndex][columnIndex] != '0')
 		occupied = true;

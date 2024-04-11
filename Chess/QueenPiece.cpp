@@ -1,13 +1,5 @@
-#include "QueenPiece.h"
-#include "functions.h"
-
-QueenPiece::QueenPiece()
-{
-}
-
-QueenPiece::~QueenPiece()
-{
-}
+#include "Headers/QueenPiece.h"
+#include "Headers/functions.h"
 
 void QueenPiece::getScope(pair<char, int> startPosition)
 {

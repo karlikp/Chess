@@ -1,7 +1,7 @@
-#include "Piece.h"
-#include "Background.h"
-#include "functions.h"
-#include "Player.h"
+#include "Headers/Piece.h"
+#include "Headers/Background.h"
+#include "Headers/functions.h"
+#include "Headers/Player.h"
 
 set<pair<char, int>> Piece::currentMoveScope;
 
@@ -40,7 +40,7 @@ bool Piece::scopeValidation()
 			return true;
 		}
 	}
-	cout << "\n The position isn't access. Type in correct move position: ";
+	cout << "\nWrong answer! Correct it: ";
 	return false;
 }
 

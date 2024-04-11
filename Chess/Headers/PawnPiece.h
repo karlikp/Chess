@@ -10,7 +10,7 @@ class PawnPiece: public Piece
 public:
 
 	PawnPiece(vector<string> board);
-	~PawnPiece();
+	~PawnPiece() = default;
 	virtual void getScope(pair<char, int> startPosition);
 	virtual bool checkMoveAccess(pair<char, int> finishPosition);
 	bool doubleStepIsEmpty();

@@ -6,8 +6,8 @@ class BishopPiece: public Piece
 
 public:
 
-	BishopPiece();
-	~BishopPiece();
+	BishopPiece() = default;
+	~BishopPiece() = default;
 	virtual void getScope(pair<char, int> startPosition);
 	virtual bool checkMoveAccess(pair<char, int> finishPosition);
 	

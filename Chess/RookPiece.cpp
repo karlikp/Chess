@@ -1,13 +1,5 @@
-#include "RookPiece.h"
-#include "functions.h"
-
-RookPiece::RookPiece()
-{
-}
-
-RookPiece::~RookPiece()
-{
-}
+#include "Headers/RookPiece.h"
+#include "Headers/functions.h"
 
 void RookPiece::getScope(pair<char, int> startPosition)
 {

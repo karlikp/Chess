@@ -2,18 +2,18 @@
 #include <vector>
 #include <string>
 
-#include "Background.h"
-#include "functions.h"
+#include "Headers/Background.h"
+#include "Headers/functions.h"
 
-#include "BishopPiece.h"
-#include "QueenPiece.h"
-#include "KingPiece.h"
-#include "KnightPiece.h"
-#include "PawnPiece.h"
-#include "RookPiece.h"
+#include "Headers/BishopPiece.h"
+#include "Headers/QueenPiece.h"
+#include "Headers/KingPiece.h"
+#include "Headers/KnightPiece.h"
+#include "Headers/PawnPiece.h"
+#include "Headers/RookPiece.h"
 
 char Background::tempSign = {};
-int Background::tempPieceValue = {};
+char Background::tempPieceLetter = {};
 int Background::tempRowIndex = {};
 int Background::tempColumnIndex = {};
 int Background::tempSignColumnIndex = {};
@@ -27,11 +27,9 @@ vector<string> Background::getBoard()
 
 Background::Background()
 {
-	vector <string> intro = readStringsFromFile("introduction.txt");
-	coutStringVector(intro);
-	rules = readStringsFromFile("instruction.txt");
+	
+	rules = readStringsFromFile("introduction.txt");
 	coutStringVector(rules);
-	cout << "[Start the game]";
 	board = readStringsFromFile("chessBoard.txt");
 }
 
@@ -52,36 +50,36 @@ void Background::setContainOfPosition(pair<char, int> coordinates)
 	tempSignColumnIndex = tempColumnIndex - 1;
 
 	tempSign = board[tempRowIndex][tempSignColumnIndex];
-	tempPieceValue = board[tempRowIndex][tempColumnIndex] - int('0');
+	tempPieceLetter = board[tempRowIndex][tempColumnIndex];
 
 }
 
-int Background::getPieceValue()
+char Background::getPieceLetter()
 {
-	return tempPieceValue;
+	return char(tempPieceLetter);
 }
 
-Piece* Background::getPiece(int pieceValue)
+Piece* Background::getPiece(char pieceValue)
 {
 	Piece* currentPiece = nullptr;
 	switch (pieceValue)
 	{
-	case 1:
+	case 'P':
 		currentPiece = new PawnPiece(board);
 		break;
-	case 2:
+	case 'H':
 		currentPiece = new KnightPiece;
 		break;
-	case 3:
+	case 'B':
 		currentPiece = new BishopPiece;
 		break;
-	case 4:
+	case 'R':
 		currentPiece = new RookPiece;
 		break;
-	case 5:
+	case 'Q':
 		currentPiece = new QueenPiece;
 		break;
-	case 6:
+	case 'K':
 		currentPiece = new KingPiece;
 		break;
 	}
@@ -97,7 +95,7 @@ void Background::move(pair<char, int> finalPosition)
 	int columnIndex = 4 + (letterCoord - int('A')) * 3;
 	int signColumnIndex = columnIndex - 1;
 
-	board[rowIndex][columnIndex] = char(tempPieceValue + int('0'));
+	board[rowIndex][columnIndex] = tempPieceLetter;
 	board[rowIndex][signColumnIndex] = tempSign;
 
 	board[tempRowIndex][tempColumnIndex] = '0';

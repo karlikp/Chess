@@ -1,6 +1,6 @@
-#include "Player.h"
-#include "functions.h"
-#include "Background.h"
+#include "Headers/Player.h"
+#include "Headers/functions.h"
+#include "Headers/Background.h"
 
 char Player::currentSign = ' ';
 int Player::turnGuard = 0;
@@ -9,10 +9,6 @@ Player::Player()
 {
 	white = 0;
 	black = 1;
-}
-
-Player::~Player()
-{
 }
 
 char Player::getCurrentSign()
@@ -30,22 +26,21 @@ pair<char, int> Player::getStartPosition()
 	cout << "\nWhich piece would you like to move with?"
 			"\nType in coordinates the piece : ";
 	pair<char, int> checkPosition;
-	int pieceValue;
+	char pieceLetter;
 	int counterAskAnswer = 0;
 	do
 	{
 		counterAskAnswer++;
 		if (counterAskAnswer > 1)
-			cout << "\nThe position which you selected doesn't contain your chess piece."
-			"\nSelect the field containing the correct coloured piece"
-			" as instructed in the initial rules."
-			"\nWhich piece would you like to move with?"
-			"\nType in coordinates the piece : ";
+		{
+			cout << "\nThe position which you selected doesn't contain your chess piece.";
+			cout << "\nCorrect it: ";
+		}
 		checkPosition = getPosition();
 		Background::setContainOfPosition(checkPosition);
-		pieceValue = Background::getPieceValue();
+		pieceLetter = Background::getPieceLetter();
 
-	}while (not (pieceValue != 0) or not validationSign(checkPosition));
+	}while (not (pieceLetter != '0') or not validationSign(checkPosition));
 
 	return checkPosition;
 }

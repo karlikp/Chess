@@ -6,8 +6,8 @@ class QueenPiece : public Piece
 
 public:
 
-	QueenPiece();
-	~QueenPiece();
+	QueenPiece() = default;
+	~QueenPiece() = default;
 	virtual void getScope(pair<char, int> startPosition);
 	virtual bool checkMoveAccess(pair<char, int> finishPosition);
 };

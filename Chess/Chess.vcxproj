@@ -143,17 +143,17 @@
     <ClCompile Include="RookPiece.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Background.h" />
-    <ClInclude Include="BishopPiece.h" />
-    <ClInclude Include="CheckValidation.h" />
-    <ClInclude Include="functions.h" />
-    <ClInclude Include="QueenPiece.h" />
-    <ClInclude Include="KingPiece.h" />
-    <ClInclude Include="KnightPiece.h" />
-    <ClInclude Include="PawnPiece.h" />
-    <ClInclude Include="Piece.h" />
-    <ClInclude Include="Player.h" />
-    <ClInclude Include="RookPiece.h" />
+    <ClInclude Include="Headers\Background.h" />
+    <ClInclude Include="Headers\BishopPiece.h" />
+    <ClInclude Include="Headers\CheckValidation.h" />
+    <ClInclude Include="Headers\Functions.h" />
+    <ClInclude Include="Headers\KingPiece.h" />
+    <ClInclude Include="Headers\KnightPiece.h" />
+    <ClInclude Include="Headers\PawnPiece.h" />
+    <ClInclude Include="Headers\Piece.h" />
+    <ClInclude Include="Headers\player.h" />
+    <ClInclude Include="Headers\QueenPiece.h" />
+    <ClInclude Include="Headers\RookPiece.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

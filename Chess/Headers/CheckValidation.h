@@ -42,7 +42,7 @@ class CheckValidation
 public:
 
 	CheckValidation(Background* chessGround);
-	~CheckValidation();
+	~CheckValidation() = default;
 	bool getCheckMate();
 	bool getCheck();
 	void updateBoard();
@@ -52,7 +52,7 @@ public:
 	void changeKingPosition(pair<char, int> newPosition);
 	void changePiecePosition
 			(pair<char, int> startPosition, pair<char, int> newPosition);
-	void completePiecesScope(); //
+	void completePiecesScope(); 
 	void createScopeSetForAll();
 	void showSets();
 	void checkMateValidation(pair<char, int> offensivePiece);

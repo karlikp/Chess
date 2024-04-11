@@ -1,13 +1,5 @@
-#include "KingPiece.h"
-#include "functions.h"
-
-KingPiece::KingPiece()
-{
-}
-
-KingPiece::~KingPiece()
-{
-}
+#include "Headers/KingPiece.h"
+#include "Headers/functions.h"
 
 void KingPiece::getScope(pair<char, int> startPosition)
 {

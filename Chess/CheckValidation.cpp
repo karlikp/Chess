@@ -1,6 +1,6 @@
 #include <cstdlib>
 
-#include "CheckValidation.h"
+#include "Headers/CheckValidation.h"
 
 CheckValidation::CheckValidation(Background* CHESSGROUND)
 {
@@ -10,11 +10,6 @@ CheckValidation::CheckValidation(Background* CHESSGROUND)
 	blackKing = { 'E', 8 };
 	check = false;
 	checkMate = false;
-}
-
-CheckValidation::~CheckValidation()
-{
-
 }
 
 bool CheckValidation::getCheckMate()
@@ -80,7 +75,7 @@ void CheckValidation::completePiecesScope()
 
 			chessGround->setContainOfPosition(currentPosition);
 
-			currentPiece = chessGround->getPiece(chessGround->getPieceValue());
+			currentPiece = chessGround->getPiece(chessGround->getPieceLetter());
 
 			currentPiece->getScope(currentPosition);
 
@@ -139,7 +134,7 @@ void CheckValidation::checkMateValidation(pair<char, int> offensivePiece)
 		kingEscape(offensivePiece, turnGuard))
 	{
 		checkMate = false;
-		cout << "\n[The check has emerged, you must keep your king safe]";
+		cout << "\n[Check! Your king is under attack]";
 	}
 	else
 		checkMate = true;
@@ -174,7 +169,7 @@ bool CheckValidation::shelterKing
 {
 	set<pair<char, int>> blockPosition;
 
-	int offensiveValue = Background::getPieceValue();
+	int offensiveValue = Background::getPieceLetter();
 	if (offensiveValue == 3 or offensiveValue == 4 or offensiveValue == 5)
 	{
 
@@ -294,7 +289,7 @@ bool CheckValidation::kingEscape(pair<char, int> offensivePiece, int turnGuard)
 void CheckValidation::movePieceForScope
 					(pair<char, int> startPosition, pair<char, int> newPosition)
 {
-	int pieceValue = Background::getPieceValue();
+	int pieceValue = Background::getPieceLetter();
 
 	if(pieceValue == 6)
 		changeKingPosition(newPosition);
@@ -327,7 +322,7 @@ bool CheckValidation::checkControl()
 
 void CheckValidation::changeKingPosition(pair<char, int> newPosition)
 {
-	if (Background::getPieceValue() == 6)
+	if (Background::getPieceLetter() == 'K')
 	{
 		if (turnGuard == 0)
 			blackKing = newPosition;

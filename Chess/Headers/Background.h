@@ -13,7 +13,8 @@ class Background
 	vector <string> intro;
 	vector <string> rules;
 	static vector <string> board;
-	static int tempPieceValue, tempRowIndex, tempColumnIndex, tempSignColumnIndex;
+	static int tempRowIndex, tempColumnIndex, tempSignColumnIndex;
+	static char tempPieceLetter;
 	
 public:
 	static char tempSign;
@@ -23,8 +24,8 @@ public:
 
 	void showRules();
 	static void setContainOfPosition(pair<char, int> position);
-	static int getPieceValue();
-	Piece* getPiece(int value);
+	static char getPieceLetter();
+	Piece* getPiece(char value);
 	void move(pair<char, int> finalPosition);
 
 	friend bool Piece::lackYourPiece(char letter, int number);

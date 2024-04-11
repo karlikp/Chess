@@ -7,8 +7,8 @@ class KingPiece: public Piece
 
 public:
 
-	KingPiece();
-	~KingPiece();
+	KingPiece() = default;
+	~KingPiece() = default;
 	virtual void getScope(pair<char, int> startPosition);
 	virtual bool checkMoveAccess(pair<char, int> finishPosition);
 };

@@ -2,10 +2,10 @@
 #include <vector>
 #include <string>
 
-#include "functions.h"
-#include "Background.h"
-#include "CheckValidation.h"
-#include "Piece.h"
+#include "Headers/functions.h"
+#include "Headers/Background.h"
+#include "Headers/CheckValidation.h"
+#include "Headers/Piece.h"
 
 using namespace std;
 
@@ -30,7 +30,7 @@ int main()
 
 			chessGround->setContainOfPosition(startPosition);
 
-			currentPiece = chessGround->getPiece(chessGround->getPieceValue());
+			currentPiece = chessGround->getPiece(chessGround->getPieceLetter());
 
 			currentPiece->getScope(startPosition);
 

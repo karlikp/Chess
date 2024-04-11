@@ -2,16 +2,8 @@
 #include<vector>
 using namespace std;
 
-#include "KnightPiece.h"
-#include "functions.h"
-
-KnightPiece::KnightPiece()
-{
-}
-
-KnightPiece::~KnightPiece()
-{
-}
+#include "Headers/KnightPiece.h"
+#include "Headers/functions.h"
 
 void KnightPiece::getScope(pair<char, int> startPosition)
 {

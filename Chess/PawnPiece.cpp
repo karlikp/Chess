@@ -1,5 +1,5 @@
-#include "PawnPiece.h"
-#include "functions.h"
+#include "Headers/PawnPiece.h"
+#include "Headers/functions.h"
 
 PawnPiece::PawnPiece(vector<string> table)
 {
@@ -7,10 +7,6 @@ PawnPiece::PawnPiece(vector<string> table)
 	letter = {};
 	number = {};
 	sign = {};
-}
-
-PawnPiece::~PawnPiece()
-{
 }
 
 void PawnPiece::getScope(pair<char, int> startPosition)

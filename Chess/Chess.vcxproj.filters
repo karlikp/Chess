@@ -53,37 +53,37 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="functions.h">
+    <ClInclude Include="Headers\Background.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Piece.h">
+    <ClInclude Include="Headers\BishopPiece.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PawnPiece.h">
+    <ClInclude Include="Headers\CheckValidation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RookPiece.h">
+    <ClInclude Include="Headers\Functions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="KnightPiece.h">
+    <ClInclude Include="Headers\KingPiece.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BishopPiece.h">
+    <ClInclude Include="Headers\KnightPiece.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="QueenPiece.h">
+    <ClInclude Include="Headers\PawnPiece.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="KingPiece.h">
+    <ClInclude Include="Headers\Piece.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
+    <ClInclude Include="Headers\player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Background.h">
+    <ClInclude Include="Headers\QueenPiece.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CheckValidation.h">
+    <ClInclude Include="Headers\RookPiece.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
