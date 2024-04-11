@@ -1,13 +1,37 @@
-# Chess_cpp
-I'm going to develop the project to pass a programming subject at University of Technology.
+# ♟️ Chess
+A console interface program enabling two players to engage in a game of chess.
+The program will be respect the basic rules of chess.
+Currently the program works but the chess control is not correct.
 
-I'm glad that you made decision to read something about me.
+### 💬 Context of the project:
+This was my main project from the third semester of my studies.
+I developed it as part of a computer programming course.
 
-I study at Silesian University of Technology. 
-Currently, I'm in the third semester.
+### 🚀 My motivation:
+I decided to develop this project because I have always liked this game.
+I thought it would be satisfying to play using my own program. 
+That's why I'm going to create a graphical interface
 
-I always like play in chess with my friends. 
-I believe that developing this project will help me improve my programming competences.
-So I will be able to develop more ambitious programming project in future.
+## 📌 To run the program:
+1. Clone the repository
+2. Change your working directory to the `Source` by cd `Chess/Source`
+3. Compile with g++:
+- On Linux `g++ *.cpp -I /Headers -o chess`
+- On Windows by `g++ *.cpp -I \Headers -o chess`
+4. Run the executable:
+- On Linux by `./chess`
+- On Windows by `chess`
 
-Link to developing scretch: https://miro.com/welcomeonboard/ZkhtQ2xxU3pHVWNVUlMzSE5JRE5JZTYwMkMxQUQweDlrOUgwRnBkN0Rmd1NWd21aV2dxZjVnaHh5VzFuZ1hQNXwzMDc0NDU3MzUxNzEwMDcwNDYxfDI=?share_link_id=718810921548
+### 📷 Galery:
+
+![Chess1](https://github.com/karlikp/Chess/assets/115083597/6c8b949a-c09e-4909-845d-ba1ad4d9c0d3)
+<br><br>**pict.1 View after starting the program**<br><br>
+
+![Chess2](https://github.com/karlikp/Chess/assets/115083597/f9326aa0-b13c-43f9-ae7a-ad1812ab7690)
+<br><br>**pict.2 Gameplay view**<br><br>
+ 
+
+
+
+
+
