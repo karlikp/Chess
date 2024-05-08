@@ -16,8 +16,8 @@ That's why I'm going to create a graphical interface
 1. Clone the repository
 2. Change your working directory to the `Source` by cd `Chess/Source`
 3. Compile with g++:
-- On Linux `g++ *.cpp -I /Headers -o chess`
-- On Windows by `g++ *.cpp -I \Headers -o chess`
+- On Linux `g++ *.cpp -I /Headers -o chess -std=c++20`
+- On Windows by `g++ *.cpp -I \Headers -o chess -std=c++20`
 4. Run the executable:
 - On Linux by `./chess`
 - On Windows by `chess`
